@@ -1,0 +1,36 @@
+[10-Nov-2016 11:54:07 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ddpbr_lunetagov.OrgaoDespesaEstado' doesn't exist' in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/carregador_despesa_estado.php:55
+Stack trace:
+#0 /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/carregador_despesa_estado.php(55): PDO->prepare('SELECT count(*)...')
+#1 {main}
+  thrown in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/carregador_despesa_estado.php on line 55
+[10-Nov-2016 12:04:43 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ddpbr_lunetagov.OrgaoDespesaEstado' doesn't exist' in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/carregador_despesa_estado.php:54
+Stack trace:
+#0 /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/carregador_despesa_estado.php(54): PDO->prepare('SELECT count(*)...')
+#1 {main}
+  thrown in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/carregador_despesa_estado.php on line 54
+[10-Nov-2016 12:05:58 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ddpbr_lunetagov.OrgaoDespesaEstado' doesn't exist' in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/carregador_despesa_estado.php:54
+Stack trace:
+#0 /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/carregador_despesa_estado.php(54): PDO->prepare('SELECT count(*)...')
+#1 {main}
+  thrown in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/carregador_despesa_estado.php on line 54
+[10-Nov-2016 12:07:21 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ddpbr_lunetagov.OrgaoDespesaEstado' doesn't exist' in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/carregador_despesa_estado.php:63
+Stack trace:
+#0 /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/carregador_despesa_estado.php(63): PDO->prepare('INSERT INTO `Or...')
+#1 {main}
+  thrown in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/carregador_despesa_estado.php on line 63
+[10-Nov-2016 12:14:42 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1142 INSERT command denied to user 'ddpbr_luneta'@'jupiter.ignitionserver.net' for table 'despesaestado'' in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/carregador_despesa_estado.php:340
+Stack trace:
+#0 /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/carregador_despesa_estado.php(340): PDO->prepare('INSERT INTO `ex...')
+#1 {main}
+  thrown in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/carregador_despesa_estado.php on line 340
+[10-Nov-2016 12:15:24 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 1267 Illegal mix of collations (latin1_swedish_ci,IMPLICIT) and (utf8_general_ci,COERCIBLE) for operation '='' in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/carregador_despesa_estado.php:238
+Stack trace:
+#0 /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/carregador_despesa_estado.php(238): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/carregador_despesa_estado.php on line 238
+[10-Nov-2016 12:19:27 America/Chicago] PHP Parse error:  syntax error, unexpected 'catch' (T_CATCH) in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/carregador_despesa_estado.php on line 240
+[10-Nov-2016 12:43:02 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'valorLiquido' in 'field list'' in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/carregador_despesa_estado.php:349
+Stack trace:
+#0 /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/carregador_despesa_estado.php(349): PDO->prepare('INSERT INTO `de...')
+#1 {main}
+  thrown in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/carregador_despesa_estado.php on line 349

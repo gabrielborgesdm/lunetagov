@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<objetos>
+  <objeto>
+    <ano>2015</ano>
+    <idFuncao>1</idFuncao>
+    <nomeFuncao>LEGISLATIVA</nomeFuncao>
+    <idSubFuncao>32</idSubFuncao>
+    <nomeSubFuncao>CONTROLE EXTERNO</nomeSubFuncao>
+    <valorPago>15245.4</valorPago>
+  </objeto>
+  <objeto>
+    <ano>2015</ano>
+    <idFuncao>1</idFuncao>
+    <nomeFuncao>LEGISLATIVA</nomeFuncao>
+    <idSubFuncao>31</idSubFuncao>
+    <nomeSubFuncao>ACAO LEGISLATIVA</nomeSubFuncao>
+    <valorPago>0</valorPago>
+  </objeto>
+  <objeto>
+    <ano>2015</ano>
+    <idFuncao>1</idFuncao>
+    <nomeFuncao>LEGISLATIVA</nomeFuncao>
+    <idSubFuncao>32</idSubFuncao>
+    <nomeSubFuncao>CONTROLE EXTERNO</nomeSubFuncao>
+    <valorPago>0</valorPago>
+  </objeto>
+  <objeto>
+    <ano>2015</ano>
+    <idFuncao>1</idFuncao>
+    <nomeFuncao>LEGISLATIVA</nomeFuncao>
+    <idSubFuncao>31</idSubFuncao>
+    <nomeSubFuncao>ACAO LEGISLATIVA</nomeSubFuncao>
+    <valorPago>800</valorPago>
+  </objeto>
+  <objeto>
+    <ano>2015</ano>
+    <idFuncao>1</idFuncao>
+    <nomeFuncao>LEGISLATIVA</nomeFuncao>
+    <idSubFuncao>31</idSubFuncao>
+    <nomeSubFuncao>ACAO LEGISLATIVA</nomeSubFuncao>
+    <valorPago>2157.55</valorPago>
+  </objeto>
+  <objeto>
+    <ano>2015</ano>
+    <idFuncao>1</idFuncao>
+    <nomeFuncao>LEGISLATIVA</nomeFuncao>
+    <idSubFuncao>31</idSubFuncao>
+    <nomeSubFuncao>ACAO LEGISLATIVA</nomeSubFuncao>
+    <valorPago>539350</valorPago>
+  </objeto>
+  <objeto>
+    <ano>2015</ano>
+    <idFuncao>1</idFuncao>
+    <nomeFuncao>LEGISLATIVA</nomeFuncao>
+    <idSubFuncao>31</idSubFuncao>
+    <nomeSubFuncao>ACAO LEGISLATIVA</nomeSubFuncao>
+    <valorPago>0</valorPago>
+  </objeto>
+  <objeto>
+    <ano>2015</ano>
+    <idFuncao>1</idFuncao>
+    <nomeFuncao>LEGISLATIVA</nomeFuncao>
+    <idSubFuncao>32</idSubFuncao>
+    <nomeSubFuncao>CONTROLE EXTERNO</nomeSubFuncao>
+    <valorPago>11432</valorPago>
+  </objeto>
+  <objeto>
+    <ano>2015</ano>
+    <idFuncao>1</idFuncao>
+    <nomeFuncao>LEGISLATIVA</nomeFuncao>
+    <idSubFuncao>32</idSubFuncao>
+    <nomeSubFuncao>CONTROLE EXTERNO</nomeSubFuncao>
+    <valorPago>0</valorPago>
+  </objeto>
+  <objeto>
+    <ano>2015</ano>
+    <idFuncao>1</idFuncao>
+    <nomeFuncao>LEGISLATIVA</nomeFuncao>
+    <idSubFuncao>32</idSubFuncao>
+    <nomeSubFuncao>CONTROLE EXTERNO</nomeSubFuncao>
+    <valorPago>2255</valorPago>
+  </objeto>
+</objetos>

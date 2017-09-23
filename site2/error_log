@@ -1,0 +1,205 @@
+[10-Nov-2016 11:08:03 America/Chicago] PHP Warning:  session_start(): Cannot send session cookie - headers already sent by (output started at /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/index.php:2) in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 3
+[10-Nov-2016 11:08:03 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/index.php:2) in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 3
+[10-Nov-2016 11:08:03 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php:5
+Stack trace:
+#0 /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php(5): PDO->__construct('mysql:host=loca...', 'root', 'vertrigo')
+#1 /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/index.php(4): include('/home/ddpbr/pub...')
+#2 {main}
+  thrown in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 5
+[10-Nov-2016 11:11:05 America/Chicago] PHP Warning:  session_start(): Cannot send session cookie - headers already sent by (output started at /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/index.php:2) in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 3
+[10-Nov-2016 11:11:05 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/index.php:2) in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 3
+[10-Nov-2016 11:11:05 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1044] Access denied for user 'ddpbr_luneta'@'localhost' to database 'ddpbr_luneta'' in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php:5
+Stack trace:
+#0 /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php(5): PDO->__construct('mysql:host=loca...', 'ddpbr_luneta', '123luneta456')
+#1 /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/index.php(4): include('/home/ddpbr/pub...')
+#2 {main}
+  thrown in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 5
+[10-Nov-2016 11:12:06 America/Chicago] PHP Warning:  session_start(): Cannot send session cookie - headers already sent by (output started at /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/index.php:2) in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 3
+[10-Nov-2016 11:12:06 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/index.php:2) in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 3
+[10-Nov-2016 11:12:06 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1044] Access denied for user 'ddpbr_luneta'@'localhost' to database 'ddpbr_luneta'' in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php:5
+Stack trace:
+#0 /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php(5): PDO->__construct('mysql:host=loca...', 'ddpbr_luneta', '123luneta456')
+#1 /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/index.php(4): include('/home/ddpbr/pub...')
+#2 {main}
+  thrown in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 5
+[10-Nov-2016 11:12:10 America/Chicago] PHP Warning:  session_start(): Cannot send session cookie - headers already sent by (output started at /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/index.php:2) in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 3
+[10-Nov-2016 11:12:10 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/index.php:2) in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 3
+[10-Nov-2016 11:12:10 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1044] Access denied for user 'ddpbr_luneta'@'localhost' to database 'ddpbr_luneta'' in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php:5
+Stack trace:
+#0 /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php(5): PDO->__construct('mysql:host=loca...', 'ddpbr_luneta', '123luneta456')
+#1 /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/index.php(4): include('/home/ddpbr/pub...')
+#2 {main}
+  thrown in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 5
+[10-Nov-2016 11:12:31 America/Chicago] PHP Warning:  session_start(): Cannot send session cookie - headers already sent by (output started at /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/index.php:2) in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 3
+[10-Nov-2016 11:12:31 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/index.php:2) in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 3
+[10-Nov-2016 11:12:31 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1044] Access denied for user 'ddpbr_luneta'@'localhost' to database 'ddpbr_lunetagov'' in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php:5
+Stack trace:
+#0 /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php(5): PDO->__construct('mysql:host=loca...', 'ddpbr_luneta', '123luneta456')
+#1 /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/index.php(4): include('/home/ddpbr/pub...')
+#2 {main}
+  thrown in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 5
+[10-Nov-2016 11:19:54 America/Chicago] PHP Warning:  session_start(): Cannot send session cookie - headers already sent by (output started at /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/index.php:2) in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 3
+[10-Nov-2016 11:19:54 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/index.php:2) in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 3
+[10-Nov-2016 11:19:54 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1044] Access denied for user 'ddpbr_luneta'@'localhost' to database 'ddpbr_lunetagov'' in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php:5
+Stack trace:
+#0 /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php(5): PDO->__construct('mysql:host=loca...', 'ddpbr_luneta', '123luneta456')
+#1 /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/index.php(4): include('/home/ddpbr/pub...')
+#2 {main}
+  thrown in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 5
+[10-Nov-2016 11:23:00 America/Chicago] PHP Warning:  session_start(): Cannot send session cookie - headers already sent by (output started at /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/index.php:2) in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 3
+[10-Nov-2016 11:23:00 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/index.php:2) in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 3
+[10-Nov-2016 11:23:00 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'ddpbr_luneta'@'jupiter.ignitionserver.net' (using password: YES)' in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php:5
+Stack trace:
+#0 /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php(5): PDO->__construct('mysql:host=jrbe...', 'ddpbr_luneta', '123luneta456')
+#1 /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/index.php(4): include('/home/ddpbr/pub...')
+#2 {main}
+  thrown in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 5
+[10-Nov-2016 11:26:04 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1044] Access denied for user 'ddpbr_luneta'@'localhost' to database 'ddpbr_lunetagov'' in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php:5
+Stack trace:
+#0 /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php(5): PDO->__construct('mysql:host=loca...', 'ddpbr_luneta', '123luneta456')
+#1 /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/index.php(3): include('/home/ddpbr/pub...')
+#2 {main}
+  thrown in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 5
+[10-Nov-2016 11:27:46 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1044] Access denied for user 'ddpbr_luneta'@'localhost' to database 'ddpbr_lunetagov'' in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php:5
+Stack trace:
+#0 /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php(5): PDO->__construct('mysql:host=loca...', 'ddpbr_luneta', '123luneta456')
+#1 /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/index.php(3): include('/home/ddpbr/pub...')
+#2 {main}
+  thrown in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 5
+[10-Nov-2016 11:28:16 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'ddpbr_luneta'@'jupiter.ignitionserver.net' (using password: YES)' in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php:5
+Stack trace:
+#0 /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php(5): PDO->__construct('mysql:host=diad...', 'ddpbr_luneta', '123luneta456')
+#1 /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/index.php(3): include('/home/ddpbr/pub...')
+#2 {main}
+  thrown in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 5
+[10-Nov-2016 11:28:42 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'ddpbr_luneta'@'jupiter.ignitionserver.net' (using password: YES)' in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php:5
+Stack trace:
+#0 /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php(5): PDO->__construct('mysql:host=diad...', 'ddpbr_luneta', '123luneta456')
+#1 /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/index.php(3): include('/home/ddpbr/pub...')
+#2 {main}
+  thrown in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 5
+[10-Nov-2016 11:28:46 America/Chicago] PHP Warning:  PDO::__construct(): php_network_getaddresses: getaddrinfo failed: Name or service not known in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 5
+[10-Nov-2016 11:28:46 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: Name or service not known' in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php:5
+Stack trace:
+#0 /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php(5): PDO->__construct('mysql:host=http...', 'ddpbr_luneta', '123luneta456')
+#1 /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/index.php(3): include('/home/ddpbr/pub...')
+#2 {main}
+  thrown in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 5
+[10-Nov-2016 11:29:20 America/Chicago] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'ddpbr_luneta'@'jupiter.ignitionserver.net' (using password: YES)' in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php:5
+Stack trace:
+#0 /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php(5): PDO->__construct('mysql:host=diad...', 'ddpbr_luneta', '123luneta456')
+#1 /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/index.php(3): include('/home/ddpbr/pub...')
+#2 {main}
+  thrown in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 5
+[10-Nov-2016 11:31:07 America/Chicago] PHP Warning:  mysql_pconnect(): Access denied for user 'ddpbr_luneta'@'jupiter.ignitionserver.net' (using password: YES) in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 9
+[10-Nov-2016 11:31:07 America/Chicago] PHP Warning:  mysql_select_db(): Access denied for user 'ddpbr'@'localhost' (using password: NO) in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 10
+[10-Nov-2016 11:31:07 America/Chicago] PHP Warning:  mysql_select_db(): A link to the server could not be established in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 10
+[10-Nov-2016 11:52:09 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/dados_pre_selecionados.php:2) in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 3
+[10-Nov-2016 11:52:12 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/dados_pre_selecionados.php:2) in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 3
+[10-Nov-2016 11:52:17 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/sobre.php:2) in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 3
+[10-Nov-2016 11:52:23 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/contato.php:2) in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 3
+[22-Nov-2016 14:37:28 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/dados_pre_selecionados.php:2) in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 3
+[24-Nov-2016 17:55:45 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/dados_pre_selecionados.php:2) in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 3
+[24-Nov-2016 17:55:48 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/sobre.php:2) in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 3
+[24-Nov-2016 17:55:50 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/contato.php:2) in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 3
+[25-Nov-2016 07:49:40 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/sobre.php:2) in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 3
+[25-Nov-2016 11:21:26 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/dados_pre_selecionados.php:2) in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 3
+[25-Nov-2016 11:21:34 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/sobre.php:2) in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 3
+[25-Nov-2016 11:21:57 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/contato.php:2) in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 3
+[28-Nov-2016 07:49:01 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/dados_pre_selecionados.php:2) in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 3
+[28-Nov-2016 10:35:24 America/Chicago] PHP Warning:  session_start(): Cannot send session cookie - headers already sent by (output started at /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/index.php:2) in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 3
+[28-Nov-2016 10:35:24 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/index.php:2) in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 3
+[28-Nov-2016 10:36:24 America/Chicago] PHP Warning:  session_start(): Cannot send session cookie - headers already sent by (output started at /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/index.php:2) in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 3
+[28-Nov-2016 10:36:24 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/index.php:2) in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 3
+[28-Nov-2016 10:37:40 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/dados_pre_selecionados.php:2) in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 3
+[28-Nov-2016 11:43:20 America/Chicago] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cadastrar_usuario.php on line 7
+[28-Nov-2016 11:43:41 America/Chicago] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cadastrar_usuario.php on line 7
+[28-Nov-2016 11:45:15 America/Chicago] PHP Fatal error:  Call to undefined method PDOStatement::error_get_last() in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cadastrar_usuario.php on line 7
+[28-Nov-2016 20:16:20 America/Chicago] PHP Parse error:  syntax error, unexpected 'or' (T_LOGICAL_OR) in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/exibe_consulta.php on line 216
+[30-Nov-2016 07:04:50 America/Chicago] PHP Fatal error:  Function name must be a string in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/envia-email.php on line 3
+[01-Dec-2016 17:19:28 America/Chicago] PHP Fatal error:  Function name must be a string in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/envia-email.php on line 3
+[01-Dec-2016 17:32:43 America/Chicago] PHP Fatal error:  Function name must be a string in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/envia-email.php on line 3
+[01-Dec-2016 17:36:14 America/Chicago] PHP Parse error:  syntax error, unexpected '=', expecting ')' in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/autenticacao.php on line 9
+[01-Dec-2016 17:38:46 America/Chicago] PHP Parse error:  syntax error, unexpected '=', expecting ')' in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/autenticacao.php on line 9
+[01-Dec-2016 17:42:04 America/Chicago] PHP Parse error:  syntax error, unexpected '=', expecting ')' in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/autenticacao.php on line 9
+[02-Dec-2016 11:58:21 America/Chicago] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/consultas.php:4) in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/cabecalho.php on line 3
+[02-Dec-2016 12:21:12 America/Chicago] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/autenticacao.php on line 11
+[02-Dec-2016 12:21:12 America/Chicago] PHP Fatal error:  Call to a member function rowCount() on a non-object in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/autenticacao.php on line 13
+[02-Dec-2016 12:26:47 America/Chicago] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/autenticacao.php on line 14
+[02-Dec-2016 12:27:34 America/Chicago] PHP Fatal error:  Call to a member function rowCount() on a non-object in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/autenticacao.php on line 16
+[02-Dec-2016 12:30:44 America/Chicago] PHP Fatal error:  Call to a member function fetch() on a non-object in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/autenticacao.php on line 16
+[02-Dec-2016 12:31:03 America/Chicago] PHP Fatal error:  Call to a member function fetch() on a non-object in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/autenticacao.php on line 16
+[02-Dec-2016 12:31:04 America/Chicago] PHP Fatal error:  Call to a member function fetch() on a non-object in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/autenticacao.php on line 16
+[02-Dec-2016 12:33:27 America/Chicago] PHP Fatal error:  Call to a member function fetch() on a non-object in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/autenticacao.php on line 16
+[02-Dec-2016 12:52:47 America/Chicago] PHP Warning:  session_destroy(): Trying to destroy uninitialized session in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/logout.php on line 3
+[02-Dec-2016 12:52:47 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/logout.php:3) in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/logout.php on line 5
+[02-Dec-2016 21:14:10 America/Chicago] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/ddpbr/public_html/sites/jrbeluzo/lunetagov/site/exibe_consulta.php on line 216
+[03-Dec-2016 10:09:30 America/Chicago] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home/ddpbr/public_html/lunetagov/site/form_consulta.php on line 327
+[03-Dec-2016 11:10:14 America/Chicago] PHP Parse error:  syntax error, unexpected '=', expecting ')' in /home/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 587
+[03-Dec-2016 11:13:29 America/Chicago] PHP Catchable fatal error:  Object of class PDOStatement could not be converted to string in /home/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 588
+[05-Dec-2016 10:24:19 America/Chicago] PHP Parse error:  syntax error, unexpected 'btn' (T_STRING), expecting ',' or ';' in /home/ddpbr/public_html/lunetagov/site/cabecalho.php on line 77
+[05-Dec-2016 10:24:21 America/Chicago] PHP Parse error:  syntax error, unexpected 'btn' (T_STRING), expecting ',' or ';' in /home/ddpbr/public_html/lunetagov/site/cabecalho.php on line 77
+[05-Dec-2016 10:27:37 America/Chicago] PHP Parse error:  syntax error, unexpected 'logout' (T_STRING), expecting ',' or ';' in /home/ddpbr/public_html/lunetagov/site/cabecalho.php on line 79
+[08-Dec-2016 10:46:27 America/Chicago] PHP Fatal error:  Call to a member function fetch() on a non-object in /home/ddpbr/public_html/lunetagov/site/teste.php on line 13
+[08-Dec-2016 10:47:00 America/Chicago] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/ddpbr/public_html/lunetagov/site/teste.php on line 13
+[09-Dec-2016 07:47:58 America/Chicago] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 605
+[09-Dec-2016 07:49:39 America/Chicago] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 605
+[09-Dec-2016 07:50:55 America/Chicago] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 605
+[09-Dec-2016 08:04:51 America/Chicago] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 605
+[13-Dec-2016 09:02:41 America/Chicago] PHP Fatal error:  Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in /home/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 13
+[13-Dec-2016 09:20:29 America/Chicago] PHP Parse error:  syntax error, unexpected '{' in /home/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 68
+[13-Dec-2016 09:24:01 America/Chicago] PHP Parse error:  syntax error, unexpected '{' in /home/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 68
+[13-Dec-2016 09:24:03 America/Chicago] PHP Parse error:  syntax error, unexpected '{' in /home/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 68
+[13-Dec-2016 09:26:07 America/Chicago] PHP Parse error:  syntax error, unexpected '{' in /home/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 68
+[13-Dec-2016 09:26:10 America/Chicago] PHP Parse error:  syntax error, unexpected '{' in /home/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 68
+[13-Dec-2016 09:38:09 America/Chicago] PHP Parse error:  syntax error, unexpected '{' in /home/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 68
+[13-Dec-2016 09:38:10 America/Chicago] PHP Parse error:  syntax error, unexpected '{' in /home/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 68
+[13-Dec-2016 09:38:52 America/Chicago] PHP Parse error:  syntax error, unexpected '{' in /home/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 68
+[13-Dec-2016 09:39:26 America/Chicago] PHP Parse error:  syntax error, unexpected '{' in /home/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 68
+[13-Dec-2016 09:40:08 America/Chicago] PHP Parse error:  syntax error, unexpected '{' in /home/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 68
+[13-Dec-2016 09:40:20 America/Chicago] PHP Parse error:  syntax error, unexpected '{' in /home/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 68
+[13-Dec-2016 09:41:23 America/Chicago] PHP Parse error:  syntax error, unexpected '{' in /home/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 68
+[13-Dec-2016 09:41:57 America/Chicago] PHP Parse error:  syntax error, unexpected '{' in /home/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 68
+[13-Dec-2016 10:37:09 America/Chicago] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 219
+[13-Dec-2016 10:38:44 America/Chicago] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 219
+[13-Dec-2016 10:41:27 America/Chicago] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 638
+[13-Dec-2016 10:44:33 America/Chicago] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 638
+[13-Dec-2016 10:54:00 America/Chicago] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 638
+[13-Dec-2016 10:57:17 America/Chicago] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 641
+[13-Dec-2016 10:58:41 America/Chicago] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 641
+[13-Dec-2016 10:59:54 America/Chicago] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 641
+[13-Dec-2016 11:01:02 America/Chicago] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 641
+[13-Dec-2016 11:01:45 America/Chicago] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 641
+[13-Dec-2016 11:03:50 America/Chicago] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 641
+[13-Dec-2016 11:56:10 America/Chicago] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 638
+[13-Dec-2016 11:58:17 America/Chicago] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 638
+[13-Dec-2016 11:59:57 America/Chicago] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 639
+[13-Dec-2016 12:01:01 America/Chicago] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 639
+[13-Dec-2016 12:05:15 America/Chicago] PHP Warning:  PDOStatement::execute(): SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in /home/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 639
+[13-Dec-2016 12:24:48 America/Chicago] PHP Parse error:  syntax error, unexpected '=' in /home/ddpbr/public_html/lunetagov/site/historico.php on line 9
+[13-Dec-2016 12:25:36 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ddpbr/public_html/lunetagov/site/cabecalho.php:59) in /home/ddpbr/public_html/lunetagov/site/historico.php on line 46
+[13-Dec-2016 12:26:10 America/Chicago] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/ddpbr/public_html/lunetagov/site/cabecalho.php:59) in /home/ddpbr/public_html/lunetagov/site/historico.php on line 46
+[25-May-2017 14:18:11 America/Chicago] PHP Notice:  Undefined variable: sqlFiltro in /media/ddpbr/public_html/lunetagov/site/monta_consulta_por_post.php on line 9
+[25-May-2017 14:18:13 America/Chicago] PHP Notice:  Undefined index: salvar in /media/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 443
+[25-May-2017 14:23:13 America/Chicago] PHP Notice:  Undefined variable: sqlFiltro in /media/ddpbr/public_html/lunetagov/site/monta_consulta_por_post.php on line 9
+[25-May-2017 14:23:13 America/Chicago] PHP Notice:  Undefined index: salvar in /media/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 443
+[25-May-2017 14:25:18 America/Chicago] PHP Notice:  Undefined variable: sqlFiltro in /media/ddpbr/public_html/lunetagov/site/monta_consulta_por_post.php on line 9
+[25-May-2017 14:25:18 America/Chicago] PHP Notice:  Undefined index: listarSubFuncao in /media/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 477
+[25-May-2017 14:25:18 America/Chicago] PHP Notice:  Undefined index: listarCategoria in /media/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 480
+[25-May-2017 14:25:18 America/Chicago] PHP Notice:  Undefined index: listarGrupo in /media/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 481
+[25-May-2017 14:25:18 America/Chicago] PHP Notice:  Undefined index: listarUnidadeGestora in /media/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 482
+[25-May-2017 14:25:18 America/Chicago] PHP Notice:  Undefined index: listarUnidadeOrcamentaria in /media/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 483
+[25-May-2017 14:25:18 America/Chicago] PHP Notice:  Undefined index: listarModalidade in /media/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 484
+[25-May-2017 14:25:18 America/Chicago] PHP Notice:  Undefined index: listarElemento in /media/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 485
+[25-May-2017 14:25:18 America/Chicago] PHP Notice:  Undefined index: listarItem in /media/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 486
+[25-May-2017 14:25:18 America/Chicago] PHP Notice:  Undefined index: listarLicitacao in /media/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 488
+[25-May-2017 14:25:18 America/Chicago] PHP Notice:  Undefined index: listarFonteRecursos in /media/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 489
+[25-May-2017 14:25:18 America/Chicago] PHP Notice:  Undefined index: listarValorEmpenhado in /media/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 491
+[25-May-2017 14:25:18 America/Chicago] PHP Notice:  Undefined index: listarDeAnosAnteriores in /media/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 493
+[25-May-2017 14:25:31 America/Chicago] PHP Notice:  Undefined index: subFuncao in /media/ddpbr/public_html/lunetagov/site/historico.php on line 54
+[25-May-2017 14:25:31 America/Chicago] PHP Notice:  Undefined index: listarValorLiquido in /media/ddpbr/public_html/lunetagov/site/historico.php on line 121
+[25-May-2017 14:25:31 America/Chicago] PHP Notice:  Undefined index: listarValorDeAnosAnteriores in /media/ddpbr/public_html/lunetagov/site/historico.php on line 129
+[25-May-2017 14:25:39 America/Chicago] PHP Notice:  Undefined variable: sqlFiltro in /media/ddpbr/public_html/lunetagov/site/monta_consulta_por_historico.php on line 9
+[25-May-2017 14:25:39 America/Chicago] PHP Notice:  Undefined index: salvar in /media/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 443
+[26-May-2017 14:26:03 America/Chicago] PHP Notice:  Undefined variable: sqlFiltro in /media/ddpbr/public_html/lunetagov/site/monta_consulta_por_post.php on line 59
+[26-May-2017 14:26:04 America/Chicago] PHP Notice:  Undefined index: salvar in /media/ddpbr/public_html/lunetagov/site/exibe_consulta.php on line 443
