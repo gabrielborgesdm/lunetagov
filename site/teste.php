@@ -10,11 +10,8 @@ $stmt = $conn->prepare($sql);
 
 $stmt->execute();
 
-while($linha = $stmt->fetch()){
-echo $linha["titulo"];
-  echo "</table> <br />";
+while ($linha = $stmt->fetch()) {
+    echo $linha["titulo"];
+    echo "</table> <br />";
 }
-
-
-
 ?>

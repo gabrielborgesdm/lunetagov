@@ -52,10 +52,10 @@ if (isset($_POST["consultar"]) || isset($_SESSION["historico"]) || (isset($_SESS
     $arraySql = array();
 
     $sql = "SELECT SUM(valorPago) as totalPago, 
-							SUM(valorEmpenhado) as totalEmpenhado, 
-							SUM(valorLiquido) as  totalLiquido,
-							SUM(valorDeAnosAnteriores) as totalAnosAnteriores
-							FROM `despesaestado` WHERE 1=1 ";
+            SUM(valorEmpenhado) as totalEmpenhado, 
+            SUM(valorLiquido) as  totalLiquido,
+            SUM(valorDeAnosAnteriores) as totalAnosAnteriores
+            FROM `despesaestado` WHERE 1=1 ";
 
 
     /* definição da página atual caso tenha entrado no exibir consultas pela 2a opção */
