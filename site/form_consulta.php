@@ -17,7 +17,41 @@
     <fieldset >
         <legend>Selecione os filtros que deseja realizar em sua consulta</legend>
         <table>
-            <tbody><tr>
+            <tbody>
+                <!--ANO-->
+                <tr>
+                    <td>
+                        <select name="anoExecucao">
+                            <option value="0">::selecione um ano::</option>
+                            <?php
+                            $select = $conn->prepare("SELECT DISTINCT ano FROM `despesaestado` ORDER BY ano");
+                            $select->execute(array());
+
+                            while ($l = $select->fetch()) {
+
+                                echo "<option value='" . $l["ano"] . "'>" . $l["ano"] . "</option>";
+                            }
+                            ?>
+                        </select>
+                    </td>
+                    <td>
+                        <select name="subfuncao">
+                            <option value="0">::selecione uma subfunção::</option>
+                            <?php
+                            $select = $conn->prepare("SELECT * FROM `subfuncaodespesaestado` ORDER BY nome");
+                            $select->execute(array());
+
+                            while ($l = $select->fetch()) {
+
+                                echo "<option value='" . $l["idSubFuncao"] . "'>" . $l["nome"] . "</option>";
+                            }
+                            ?>
+                        </select>
+                    </td>
+                </tr>
+                
+                
+                <tr>
                     <td>
                         <select name="funcao">
                             <option value="0">::selecione uma função::</option>
@@ -231,22 +265,22 @@
     </fieldset>
     <br>
 
-    <fieldset>
+    <fieldset id="camposDefinidores">
         <legend>Mostrar os seguintes campos definidores da despesa no resultado da pesquisa</legend>
-        <input type="checkbox" name="listarFuncao" onclick="topDez(this.name)"> Função  
-        <input type="checkbox" name="listarSubFuncao" onclick="topDez(this.name)">SubFunção  
-        <input type="checkbox" name="listarAcao" onclick="topDez(this.name)"> Ação  
-        <input type="checkbox" name="listarOrgao" onclick="topDez(this.name)"> Orgão 
-        <input type="checkbox" name="listarCategoria" onclick="topDez(this.name)"> Categoria 
-        <input type="checkbox" name="listarGrupo" onclick="topDez(this.name)"> Grupo 
-        <input type="checkbox" name="listarUnidadeOrcamentaria" onclick="topDez(this.name)"> Unidade Orçamentária <br><br>
-        <input type="checkbox" name="listarUnidadeGestora" onclick="topDez(this.name)"> Unidade Gestora 
-        <input type="checkbox" name="listarModalidade" onclick="topDez(this.name)"> Modalidade 
-        <input type="checkbox" name="listarElemento" onclick="topDez(this.name)"> Elemento 
-        <input type="checkbox" name="listarItem" onclick="topDez(this.name)"> Item 
-        <input type="checkbox" name="listarCredor" onclick="topDez(this.name)"> Credor 
-        <input type="checkbox" name="listarLicitacao" onclick="topDez(this.name)"> Licitação 
-        <input type="checkbox" name="listarFonteRecursos" onclick="topDez(this.name)"> Fonte de Recursos
+        <input type="checkbox" name="listarFuncao" onclick="topDez(this)"> Função  
+        <input type="checkbox" name="listarSubFuncao" onclick="topDez(this)">SubFunção  
+        <input type="checkbox" name="listarAcao" onclick="topDez(this)"> Ação  
+        <input type="checkbox" name="listarOrgao" onclick="topDez(this)"> Orgão 
+        <input type="checkbox" name="listarCategoria" onclick="topDez(this)"> Categoria 
+        <input type="checkbox" name="listarGrupo" onclick="topDez(this)"> Grupo 
+        <input type="checkbox" name="listarUnidadeOrcamentaria" onclick="topDez(this)"> Unidade Orçamentária <br><br>
+        <input type="checkbox" name="listarUnidadeGestora" onclick="topDez(this)"> Unidade Gestora 
+        <input type="checkbox" name="listarModalidade" onclick="topDez(this)"> Modalidade 
+        <input type="checkbox" name="listarElemento" onclick="topDez(this)"> Elemento 
+        <input type="checkbox" name="listarItem" onclick="topDez(this)"> Item 
+        <input type="checkbox" name="listarCredor" onclick="topDez(this)"> Credor 
+        <input type="checkbox" name="listarLicitacao" onclick="topDez(this)"> Licitação 
+        <input type="checkbox" name="listarFonteRecursos" onclick="topDez(this)"> Fonte de Recursos
 
     </fieldset>
 
@@ -263,7 +297,7 @@
     <br>
 
     <fieldset id="fieldTopDez" style="display: none">
-        <legend>Mostrar os 10 maiores resultados segundo os campos definidores</legend>
+        <legend>Mostrar os 10 maiores resultados segundo o seguinte campo definidor</legend>
         <select name="selectTopDez" id="selectTopDez">
         </select>    
     </fieldset>

@@ -394,8 +394,11 @@ if (isset($_POST["consultar"]) || isset($_SESSION["historico"]) || (isset($_SESS
 
 
     $titulos .= '</tr>';
-
-
+    
+    if ($_POST["anoExecucao"] != 0){
+		$joinSelect.= " AND ano = ".$_POST["anoExecucao"];
+	}
+    
     if ((!isset($_SESSION["consulta"]) && isset($_POST["consultar"])) || isset($_SESSION["historico"])) {
 
         $select .= " FROM despesaestado AS de " . $joinSelect;
@@ -473,15 +476,30 @@ if (isset($_POST["consultar"]) || isset($_SESSION["historico"]) || (isset($_SESS
     $selecionaDados = $select;
     include("fazerDownload.php");
 
-
+	//$aux_top_10 = explode("FROM",$select); o explode vai quebrar a variavel em um vetor da onde a posicao 0 tem tudo até o FROM
+	// e a posicao 1 tem tudo depois; depois disso vc vai concatenar o codigo do top 10 com a segunda parte do vetor e depois o order by depois da segunda parte
+	//exemplo de codigo antes do from:  "SELECT crde.nome as credorNome, SUM(valorPago) as soma" se o usuario tivesse selecionado funcao no top 10 seria "SELECT fde.idFuncao as credorNome, SUM(valorPago) as soma"
+	// exemplo pra concatenar com a segunda parte depois de seu termino: "GROUP BY crde.nome ORDER BY soma DESC LIMIT 10", se fosse funcao seria "GROUP BY fde.idFuncao ORDER BY soma DESC LIMIT 10"
+	
+	/*
+	a variavel top10 deveria ficar:
+	
+	SELECT crde.nome as credorNome, SUM(valorPago) as soma FROM despesaestado AS de join `funcaodespesaestado` AS fde ON fde.idFuncao=de.idFuncao AND de.idFuncao=12 join `unidadeorcamentariadespesaestado`
+	AS uode ON uode.idUnidadeOrcamentaria=de.idUnidadeOrcamentaria join `credordespesaestado` AS crde ON crde.idCredor=de.idCredor AND ano = 2015 GROUP BY crde.nome ORDER BY soma DESC LIMIT 10
+	*/
+	
+	
+	
     //finaliza a consulta com a paginação
     $select .= " LIMIT $pg, 10";
 
     //executa a consulta-
-
+	
+	
     $consulta = $conn->prepare($select);
     $consulta->execute();
-
+	
+	/*Fazer esse metodo acima e mostrar a tabela top 10 antes da tabela normal*/
 
     echo $titulos;
 
@@ -609,7 +627,7 @@ if (isset($_POST["consultar"]) || isset($_SESSION["historico"]) || (isset($_SESS
                 return;
             js = d.createElement(s);
             js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
+            js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));</script>
 
