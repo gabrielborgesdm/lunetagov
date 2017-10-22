@@ -545,33 +545,33 @@ if (isset($_POST["consultar"]) || isset($_SESSION["historico"]) || (isset($_SESS
         $consulta = $conn->prepare($selectTop10);
         $consulta->execute();
 	
-	
 
-        echo'
-            <p>
-                <table align="left" class="table" border="1" style="border-color:#000000">
-                    <tr style="background-color:#FABC0A;color:#FFFFFF;">
-                        <td>Top Dez</td>
-                        <td>R$</td>
-                    </tr>';
-                    
-
-        $cor[0] = "#F0F0F0";
-        $cor[1] = "FFFFFF";
         $i = 0;
+        
         while ($linha = $consulta->fetch()) {
             
+            $matrizTopDez[$i][0] = $linha["nome"];
+            $matrizTopDez[$i][1] = $linha["soma"];
+            $i++;
+        }
+        
+        echo"<br /><br />"
+        . "<div>"
+        . "<h1 style='text-align:center'>TopDez</h1>"
+        . "<table>";
+        for($i=0;$i<count($matrizTopDez);$i++){
             echo'
                 <tr>
-                    <td>' . $linha["nome"] . '</td>
-                    <td>' . number_format($linha['soma'], 2, '.', ',') . '</td> 
+                    <td>'.$matrizTopDez[$i][0].'</td> '
+                    . '<td> <progress value="'.$matrizTopDez[$i][1].'" max="'.$matrizTopDez[0][1].'"></progress></td>'
+                    .'<td>'.number_format($matrizTopDez[$i][1], 2, ",", ".").'</td>
                 </tr>';
         }
-
-        echo'</table>
-        </p>
-        <br /><br /><br /><br /><br />
-        <br /><br /><br /><br /><br />
+        
+        echo'
+        </table>
+        </div>
+        <br /><br />
         '; 
         
         
