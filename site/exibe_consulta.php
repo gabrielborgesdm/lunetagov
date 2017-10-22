@@ -106,8 +106,8 @@ if (isset($_POST["consultar"]) || isset($_SESSION["historico"]) || (isset($_SESS
         $_SESSION["listarFuncao"] = 1;
         //concatena na variavel $titulo as colunas Cod Função e Função.
         $titulos .= '
-					<td>Cod Função</td>
-					<td>Função</td>';
+            <td>Cod Função</td>
+            <td>Função</td>';
         //concatena na variavel $select os itens a serem selecionados na consulta		
         $select .= ", de.idFuncao as idFuncao, fde.nome AS nomeFuncao";
         //concatena na variavel $joinSelect as juncoes de tabela despesaestado e funcaodespesaestado
@@ -395,8 +395,14 @@ if (isset($_POST["consultar"]) || isset($_SESSION["historico"]) || (isset($_SESS
 
     $titulos .= '</tr>';
     //Se nenhum ano tiver sido selecionado
-    if ($_POST["anoExecucao"] != 0){
-		$joinSelect.= " AND ano = ".$_POST["anoExecucao"];
+    if (isset($_POST["anoExecucao"]) || isset($_SESSION["anoExecucao"])){
+            if(!isset($_SESSION["anoExecucao"])){
+                $_SESSION["anoExecucao"] = $_POST["anoExecucao"];
+            }
+            if($_SESSION["anoExecucao"] != 0){
+                $joinSelect.= " AND ano = ".$_POST["anoExecucao"];
+            }
+            
 	}
     
     if ((!isset($_SESSION["consulta"]) && isset($_POST["consultar"])) || isset($_SESSION["historico"])) {
@@ -471,115 +477,134 @@ if (isset($_POST["consultar"]) || isset($_SESSION["historico"]) || (isset($_SESS
         //print_r($vetorInsercao);
         $insercaoHistorico->execute($vetorInsercao) or die("Erro ao inserir historico");
     }
-
+    
     $selecionaDados = $select;
+    //Inclui o form que disponibiliza arquivos csv,xml,etc
     include("fazerDownload.php");
     
-    if($_POST["selectTopDez"] != "0"){
-        
-        switch ($_POST["selectTopDez"]){
-            case "listarFuncao":
-                $nomeTopDez = "fde.nome";
-                break;
-            
-            case "listarSubFuncao":
-                $nomeTopDez ="sfde.nome";
-                break;
-            
-            case "listarAcao":
-                $nomeTopDez ="ade.nome";
-                break;
-            
-            case "listarOrgao":
-                $nomeTopDez ="ode.nome";
-                break;
-            
-            case "listarCategoria":
-                $nomeTopDez ="cde.nome";
-                break;
-            
-            case "listarGrupo":
-                $nomeTopDez ="gde.nome";
-                break;
-            
-            case "listarUnidadeOrcamentaria":
-                $nomeTopDez ="uode.nome";
-                break;
-            
-            case "listarUnidadeGestora":
-                $nomeTopDez ="ugde.nome";
-                break;
-            
-            case "listarModalidade":
-                $nomeTopDez ="mde.nome";
-                break;
-            
-            case "listarElemento":
-                $nomeTopDez ="ede.nome";
-                break;
-            
-            case "listarItem":
-                $nomeTopDez ="ide.nome";
-                break;
-            
-            case "listarCredor":
-                $nomeTopDez ="crde.nome";
-                break;
-            
-            case "listarLicitacao":
-                $nomeTopDez ="lde.nome";
-                break;
-            
-            case "listarFonteRecursos":
-                $nomeTopDez ="frde.nome";
-                break;
-                
+    //Se for a primeira pagina a variavel torna 1
+    if(isset($_GET["pg"])){
+        if($_GET["pg"] == "1"){
+            $validaPg1 = 1;
         }
-        
-        $selectTop10 = explode("FROM",$select);
-    
-        $selectTop10[0] = "SELECT $nomeTopDez, SUM(valorPago) as soma FROM ";
-        $selectTop10[1] .= " GROUP BY $nomeTopDez ORDER BY soma DESC LIMIT 10";
-        $selectTop10 = implode(" ",$selectTop10);
-        
-        $consulta = $conn->prepare($selectTop10);
-        $consulta->execute();
-	
-
-        $i = 0;
-        
-        while ($linha = $consulta->fetch()) {
-            
-            $matrizTopDez[$i][0] = $linha["nome"];
-            $matrizTopDez[$i][1] = $linha["soma"];
-            $i++;
+        else{
+            $validaPg1 = 0;
         }
-        
-        echo"<br /><br />"
-        . "<div>"
-        . "<h1 style='text-align:center'>TopDez</h1>"
-        . "<table>";
-        for($i=0;$i<count($matrizTopDez);$i++){
-            echo'
-                <tr>
-                    <td>'.$matrizTopDez[$i][0].'</td> '
-                    . '<td> <progress value="'.$matrizTopDez[$i][1].'" max="'.$matrizTopDez[0][1].'"></progress></td>'
-                    .'<td>'.number_format($matrizTopDez[$i][1], 2, ",", ".").'</td>
-                </tr>';
-        }
-        
-        echo'
-        </table>
-        </div>
-        <br /><br />
-        '; 
-        
-        
     }
+    else{
+       $validaPg1 = 1; 
+    }
+    //armazena a variavel em uma session
+    if( isset($_POST["selectTopDez"])){
+        $_SESSION["selectTopDez"] = $_POST["selectTopDez"];
+    }
+    //só entra no if se for a primeira pagina
+    if($validaPg1){
+        if($_SESSION["selectTopDez"] != '0' ){
+        
+            switch ($_SESSION["selectTopDez"]){
+                case "listarFuncao":
+                    $nomeTopDez = "fde.nome";
+                    break;
+
+                case "listarSubFuncao":
+                    $nomeTopDez ="sfde.nome";
+                    break;
+
+                case "listarAcao":
+                    $nomeTopDez ="ade.nome";
+                    break;
+
+                case "listarOrgao":
+                    $nomeTopDez ="ode.nome";
+                    break;
+
+                case "listarCategoria":
+                    $nomeTopDez ="cde.nome";
+                    break;
+
+                case "listarGrupo":
+                    $nomeTopDez ="gde.nome";
+                    break;
+
+                case "listarUnidadeOrcamentaria":
+                    $nomeTopDez ="uode.nome";
+                    break;
+
+                case "listarUnidadeGestora":
+                    $nomeTopDez ="ugde.nome";
+                    break;
+
+                case "listarModalidade":
+                    $nomeTopDez ="mde.nome";
+                    break;
+
+                case "listarElemento":
+                    $nomeTopDez ="ede.nome";
+                    break;
+
+                case "listarItem":
+                    $nomeTopDez ="ide.nome";
+                    break;
+
+                case "listarCredor":
+                    $nomeTopDez ="crde.nome";
+                    break;
+
+                case "listarLicitacao":
+                    $nomeTopDez ="lde.nome";
+                    break;
+
+                case "listarFonteRecursos":
+                    $nomeTopDez ="frde.nome";
+                    break;
+
+            }
+            //divide o select em duas partes: tudo antes do from e tudo depois
+            $selectTop10 = explode("FROM",$select);
+
+            $selectTop10[0] = "SELECT $nomeTopDez, SUM(valorPago) as soma FROM ";
+            $selectTop10[1] .= " GROUP BY $nomeTopDez ORDER BY soma DESC LIMIT 10";
+            $selectTop10 = implode(" ",$selectTop10);
+
+            $consulta = $conn->prepare($selectTop10);
+            $consulta->execute();
+
+
+            $i = 0;
+            //armazena em uma matriz
+            while ($linha = $consulta->fetch()) {
+
+                $matrizTopDez[$i][0] = $linha["nome"];
+                $matrizTopDez[$i][1] = $linha["soma"];
+                $i++;
+            }
+            
+            //monta a tabela com as barras de progresso
+            echo"<br /><br />"
+            . "<div>"
+            . "<h1 style='text-align:center'>TopDez</h1>"
+            . "<table>";
+            for($i=0;$i<count($matrizTopDez);$i++){
+                echo'
+                    <tr>
+                        <td>'.$matrizTopDez[$i][0].'</td> '
+                        . '<td> <progress value="'.$matrizTopDez[$i][1].'" max="'.$matrizTopDez[0][1].'"></progress></td>'
+                        .'<td>'.number_format($matrizTopDez[$i][1], 2, ",", ".").'</td>
+                    </tr>';
+            }
+
+            echo'
+            </table>
+            </div>
+            <br /><br />
+            '; 
+
+
+        }
+    }    
 	
-	
-	
-	
+    
     //finaliza a consulta com a paginação
     
     $select .= " LIMIT $pg, 10";
