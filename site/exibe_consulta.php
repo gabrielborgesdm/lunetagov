@@ -329,7 +329,7 @@ if (isset($_POST["consultar"]) || isset($_SESSION["historico"]) || (isset($_SESS
         //concatena na variavel $joinSelect as juncoes de tabela despesaestado e fonterecursosdespesaestado
         $joinSelect .= " join `fonterecursosdespesaestado` AS frde ON frde.idFonteRecurso=de.idFonteRecurso";
 
-        if ($_SESSION['fonterescursos'] != 0) {
+        if ($_POST['fonterecursos'] != 0) {
             $joinSelect .= ' AND de.idFonteRecurso=' . $_SESSION['fonterecursos'];
         }
     }
@@ -394,7 +394,7 @@ if (isset($_POST["consultar"]) || isset($_SESSION["historico"]) || (isset($_SESS
 
 
     $titulos .= '</tr>';
-    
+    //Se nenhum ano tiver sido selecionado
     if ($_POST["anoExecucao"] != 0){
 		$joinSelect.= " AND ano = ".$_POST["anoExecucao"];
 	}
@@ -472,25 +472,116 @@ if (isset($_POST["consultar"]) || isset($_SESSION["historico"]) || (isset($_SESS
         $insercaoHistorico->execute($vetorInsercao) or die("Erro ao inserir historico");
     }
 
-    #Alterado por Gabriel Borges
     $selecionaDados = $select;
     include("fazerDownload.php");
+    
+    if($_POST["selectTopDez"] != "0"){
+        
+        switch ($_POST["selectTopDez"]){
+            case "listarFuncao":
+                $nomeTopDez = "fde.nome";
+                break;
+            
+            case "listarSubFuncao":
+                $nomeTopDez ="sfde.nome";
+                break;
+            
+            case "listarAcao":
+                $nomeTopDez ="ade.nome";
+                break;
+            
+            case "listarOrgao":
+                $nomeTopDez ="ode.nome";
+                break;
+            
+            case "listarCategoria":
+                $nomeTopDez ="cde.nome";
+                break;
+            
+            case "listarGrupo":
+                $nomeTopDez ="gde.nome";
+                break;
+            
+            case "listarUnidadeOrcamentaria":
+                $nomeTopDez ="uode.nome";
+                break;
+            
+            case "listarUnidadeGestora":
+                $nomeTopDez ="ugde.nome";
+                break;
+            
+            case "listarModalidade":
+                $nomeTopDez ="mde.nome";
+                break;
+            
+            case "listarElemento":
+                $nomeTopDez ="ede.nome";
+                break;
+            
+            case "listarItem":
+                $nomeTopDez ="ide.nome";
+                break;
+            
+            case "listarCredor":
+                $nomeTopDez ="crde.nome";
+                break;
+            
+            case "listarLicitacao":
+                $nomeTopDez ="lde.nome";
+                break;
+            
+            case "listarFonteRecursos":
+                $nomeTopDez ="frde.nome";
+                break;
+                
+        }
+        
+        $selectTop10 = explode("FROM",$select);
+    
+        $selectTop10[0] = "SELECT $nomeTopDez, SUM(valorPago) as soma FROM ";
+        $selectTop10[1] .= " GROUP BY $nomeTopDez ORDER BY soma DESC LIMIT 10";
+        $selectTop10 = implode(" ",$selectTop10);
+        
+        $consulta = $conn->prepare($selectTop10);
+        $consulta->execute();
+	
+	
 
-	//$aux_top_10 = explode("FROM",$select); o explode vai quebrar a variavel em um vetor da onde a posicao 0 tem tudo até o FROM
-	// e a posicao 1 tem tudo depois; depois disso vc vai concatenar o codigo do top 10 com a segunda parte do vetor e depois o order by depois da segunda parte
-	//exemplo de codigo antes do from:  "SELECT crde.nome as credorNome, SUM(valorPago) as soma" se o usuario tivesse selecionado funcao no top 10 seria "SELECT fde.idFuncao as credorNome, SUM(valorPago) as soma"
-	// exemplo pra concatenar com a segunda parte depois de seu termino: "GROUP BY crde.nome ORDER BY soma DESC LIMIT 10", se fosse funcao seria "GROUP BY fde.idFuncao ORDER BY soma DESC LIMIT 10"
+        echo'
+            <p>
+                <table align="left" class="table" border="1" style="border-color:#000000">
+                    <tr style="background-color:#FABC0A;color:#FFFFFF;">
+                        <td>Top Dez</td>
+                        <td>R$</td>
+                    </tr>';
+                    
+
+        $cor[0] = "#F0F0F0";
+        $cor[1] = "FFFFFF";
+        $i = 0;
+        while ($linha = $consulta->fetch()) {
+            
+            echo'
+                <tr>
+                    <td>' . $linha["nome"] . '</td>
+                    <td>' . number_format($linha['soma'], 2, '.', ',') . '</td> 
+                </tr>';
+        }
+
+        echo'</table>
+        </p>
+        <br /><br /><br /><br /><br />
+        <br /><br /><br /><br /><br />
+        '; 
+        
+        
+    }
 	
-	/*
-	a variavel top10 deveria ficar:
-	
-	SELECT crde.nome as credorNome, SUM(valorPago) as soma FROM despesaestado AS de join `funcaodespesaestado` AS fde ON fde.idFuncao=de.idFuncao AND de.idFuncao=12 join `unidadeorcamentariadespesaestado`
-	AS uode ON uode.idUnidadeOrcamentaria=de.idUnidadeOrcamentaria join `credordespesaestado` AS crde ON crde.idCredor=de.idCredor AND ano = 2015 GROUP BY crde.nome ORDER BY soma DESC LIMIT 10
-	*/
 	
 	
 	
     //finaliza a consulta com a paginação
+    
     $select .= " LIMIT $pg, 10";
 
     //executa a consulta-

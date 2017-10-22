@@ -299,6 +299,7 @@
     <fieldset id="fieldTopDez" style="display: none">
         <legend>Mostrar os 10 maiores resultados segundo o seguinte campo definidor</legend>
         <select name="selectTopDez" id="selectTopDez">
+            <option value="0">::selecione uma opção::</option>
         </select>    
     </fieldset>
 
