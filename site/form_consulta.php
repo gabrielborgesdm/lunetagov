@@ -34,20 +34,6 @@
                             ?>
                         </select>
                     </td>
-                    <td>
-                        <select name="subfuncao">
-                            <option value="0">::selecione uma subfunção::</option>
-                            <?php
-                            $select = $conn->prepare("SELECT * FROM `subfuncaodespesaestado` ORDER BY nome");
-                            $select->execute(array());
-
-                            while ($l = $select->fetch()) {
-
-                                echo "<option value='" . $l["idSubFuncao"] . "'>" . $l["nome"] . "</option>";
-                            }
-                            ?>
-                        </select>
-                    </td>
                 </tr>
                 
                 
@@ -267,20 +253,20 @@
 
     <fieldset id="camposDefinidores">
         <legend>Mostrar os seguintes campos definidores da despesa no resultado da pesquisa</legend>
-        <input type="checkbox" name="listarFuncao" onclick="topDez(this)"> Função  
-        <input type="checkbox" name="listarSubFuncao" onclick="topDez(this)">SubFunção  
-        <input type="checkbox" name="listarAcao" onclick="topDez(this)"> Ação  
-        <input type="checkbox" name="listarOrgao" onclick="topDez(this)"> Orgão 
-        <input type="checkbox" name="listarCategoria" onclick="topDez(this)"> Categoria 
-        <input type="checkbox" name="listarGrupo" onclick="topDez(this)"> Grupo 
-        <input type="checkbox" name="listarUnidadeOrcamentaria" onclick="topDez(this)"> Unidade Orçamentária <br><br>
-        <input type="checkbox" name="listarUnidadeGestora" onclick="topDez(this)"> Unidade Gestora 
-        <input type="checkbox" name="listarModalidade" onclick="topDez(this)"> Modalidade 
-        <input type="checkbox" name="listarElemento" onclick="topDez(this)"> Elemento 
-        <input type="checkbox" name="listarItem" onclick="topDez(this)"> Item 
-        <input type="checkbox" name="listarCredor" onclick="topDez(this)"> Credor 
-        <input type="checkbox" name="listarLicitacao" onclick="topDez(this)"> Licitação 
-        <input type="checkbox" name="listarFonteRecursos" onclick="topDez(this)"> Fonte de Recursos
+        <label><input type="checkbox" name="listarFuncao" class="topDezCheck"> Função</label>
+        <label><input type="checkbox" name="listarSubFuncao" class="topDezCheck">SubFunção</label>
+        <label><input type="checkbox" name="listarAcao" class="topDezCheck">Ação</label>  
+        <label><input type="checkbox" name="listarOrgao" class="topDezCheck">Orgão</label> 
+        <label><input type="checkbox" name="listarCategoria" class="topDezCheck">Categoria</label> 
+        <label><input type="checkbox" name="listarGrupo" class="topDezCheck">Grupo</label> 
+        <label><input type="checkbox" name="listarUnidadeOrcamentaria" class="topDezCheck">Unidade Orçamentária</label> <br><br>
+        <label><input type="checkbox" name="listarUnidadeGestora" class="topDezCheck">Unidade Gestora</label> 
+        <label><input type="checkbox" name="listarModalidade" class="topDezCheck">Modalidade</label>
+        <label><input type="checkbox" name="listarElemento" class="topDezCheck">Elemento</label> 
+        <label><input type="checkbox" name="listarItem" class="topDezCheck">Item</label> 
+        <label><input type="checkbox" name="listarCredor" class="topDezCheck">Credor</label> 
+        <label><input type="checkbox" name="listarLicitacao" class="topDezCheck">Licitação</label> 
+        <label><input type="checkbox" name="listarFonteRecursos" class="topDezCheck">Fonte de Recursos</label>
 
     </fieldset>
 
@@ -296,7 +282,7 @@
 
     <br>
 
-    <fieldset id="fieldTopDez" style="display: none">
+    <fieldset id="fieldTopDez" style="display:none">
         <legend>Mostrar os 10 maiores resultados segundo o seguinte campo definidor</legend>
         <select name="selectTopDez" id="selectTopDez">
             <option value="0">::selecione uma opção::</option>
@@ -364,7 +350,7 @@
     <div class="message" >
         <br />
         <input type="hidden" name="consultar" value="1">
-        <input type="button" onclick="validaEtapas()" id="botaoConsulta"  value="CONSULTAR!" >
+        <input type="button" id="botaoConsulta"  value="CONSULTAR!" >
     </div>
 
 </form>

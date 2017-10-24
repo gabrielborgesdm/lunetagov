@@ -329,7 +329,7 @@ if (isset($_POST["consultar"]) || isset($_SESSION["historico"]) || (isset($_SESS
         //concatena na variavel $joinSelect as juncoes de tabela despesaestado e fonterecursosdespesaestado
         $joinSelect .= " join `fonterecursosdespesaestado` AS frde ON frde.idFonteRecurso=de.idFonteRecurso";
 
-        if ($_POST['fonterecursos'] != 0) {
+        if ($_SESSION['fonterecursos'] != 0) {
             $joinSelect .= ' AND de.idFonteRecurso=' . $_SESSION['fonterecursos'];
         }
     }
