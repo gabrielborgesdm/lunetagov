@@ -39,7 +39,7 @@
                 
                 <tr>
                     <td>
-                        <select name="funcao">
+                        <select name="funcao" class="filtroExec">
                             <option value="0">::selecione uma função::</option>
                             <?php
                             $select = $conn->prepare("SELECT * FROM `funcaodespesaestado` ORDER BY nome");
@@ -53,7 +53,7 @@
                         </select>
                     </td>
                     <td>
-                        <select name="subfuncao">
+                        <select name="subfuncao" class="filtroExec">
                             <option value="0">::selecione uma subfunção::</option>
                             <?php
                             $select = $conn->prepare("SELECT * FROM `subfuncaodespesaestado` ORDER BY nome");
@@ -69,7 +69,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <select name="acao">
+                        <select name="acao" class="filtroExec">
                             <option value="0">::selecione uma ação::</option>
                             <?php
                             $select = $conn->prepare("SELECT * FROM `acaodespesaestado` ORDER BY nome");
@@ -83,7 +83,7 @@
                         </select>
                     </td>
                     <td>
-                        <select name="orgao">
+                        <select name="orgao" class="filtroExec">
                             <option value="0">::selecione um orgão::</option>
                             <?php
                             $select = $conn->prepare("SELECT * FROM `orgaodespesaestado` ORDER BY nome");
@@ -99,7 +99,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <select name="categoria">
+                        <select name="categoria" class="filtroExec">
                             <option value="0">::selecione uma categoria::</option>
                             <?php
                             $select = $conn->prepare("SELECT * FROM `categoriadespesaestado` ORDER BY nome");
@@ -113,7 +113,7 @@
                         </select>
                     </td>
                     <td>
-                        <select name="grupo">
+                        <select name="grupo" class="filtroExec">
                             <option value="0">::selecione um grupo::</option>
                             <?php
                             $select = $conn->prepare("SELECT * FROM `grupodespesaestado` ORDER BY nome");
@@ -129,7 +129,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <select name="unidadeorcamentaria">
+                        <select name="unidadeorcamentaria" class="filtroExec">
                             <option value="0">::selecione uma unidade orçamentária::</option>
                             <?php
                             $select = $conn->prepare("SELECT * FROM `unidadeorcamentariadespesaestado` ORDER BY nome");
@@ -143,7 +143,7 @@
                         </select>
                     </td>
                     <td>
-                        <select name="unidadegestora">
+                        <select name="unidadegestora" class="filtroExec">
                             <option value="0">::selecione uma unidade gestora::</option>
                             <?php
                             $select = $conn->prepare("SELECT * FROM `unidadegestoradespesaestado` ORDER BY nome");
@@ -159,7 +159,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <select name="modalidade">
+                        <select name="modalidade" class="filtroExec">
                             <option value="0">::selecione uma modalidade::</option>
                             <?php
                             $select = $conn->prepare("SELECT * FROM `modalidadedespesaestado` ORDER BY nome");
@@ -173,7 +173,7 @@
                         </select>
                     </td>
                     <td>
-                        <select name="elemento">
+                        <select name="elemento" class="filtroExec">
                             <option value="0">::selecione um elemento::</option>
                             <?php
                             $select = $conn->prepare("SELECT * FROM `elementodespesaestado` ORDER BY nome");
@@ -189,7 +189,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <select name="item">
+                        <select name="item" class="filtroExec">
                             <option value="0">::selecione um item::</option>
                             <?php
                             $select = $conn->prepare("SELECT * FROM `itemdespesaestado` ORDER BY nome");
@@ -203,7 +203,7 @@
                         </select>
                     </td>
                     <td>
-                        <select name="credor">
+                        <select name="credor" class="filtroExec">
                             <option value="0">::selecione um credor::</option>
                             <?php
                             $select = $conn->prepare("SELECT * FROM `credordespesaestado` ORDER BY nome");
@@ -219,7 +219,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <select name="licitacao">
+                        <select name="licitacao" class="filtroExec">
                             <option value="0">::selecione uma licitação::</option>
                             <?php
                             $select = $conn->prepare("SELECT * FROM `licitacaodespesaestado` ORDER BY nome");
@@ -233,7 +233,7 @@
                         </select>
                     </td>
                     <td>
-                        <select name="fonterecursos">
+                        <select name="fonterecursos" class="filtroExec">
                             <option value="0">::selecione uma fonte de recursos::</option>
                             <?php
                             $select = $conn->prepare("SELECT * FROM `fonterecursosdespesaestado` ORDER BY nome");

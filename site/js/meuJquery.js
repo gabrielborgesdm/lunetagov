@@ -1,15 +1,39 @@
 $(document).ready(function(){
     
-    //Nao deixar submeter sem marcar nenhuma etapa de execução orçamentaria
+    //Nao deixar submeter sem marcar nenhuma etapa de execução orçamentaria e escolher um topDez igual ao filtro
     $('#botaoConsulta').click(function() {
-      if( $("#listarValorPago").is(':checked') || $("#listarValorEmpenhado").is(':checked') || $("#listarValorLiquido").is(':checked') || $("#listarDeAnosAnteriores").is(':checked') ) {
+        var checado = 0;
+        var filtro = 1;
+        
+        
+        $.each($(".filtroExec") , function (index, value){
+            if(this.value != 0){
+                var equivalente = verificaFiltro(this.name);
+           
+                if(equivalente == $("#selectTopDez")[0].value){
+                   filtro = 0; 
+                }
+            }
+          });
+       
+        if( $("#listarValorPago").is(':checked') || $("#listarValorEmpenhado").is(':checked') || $("#listarValorLiquido").is(':checked') || $("#listarDeAnosAnteriores").is(':checked') ) {
+          checado = 1;
+        }
+        
+        if(checado && filtro) {
           $("#consulta").submit();
-      }
-      else{
-          swal ( "Oops" ,  "Selecione pelo menos um tipo de execução orçamentária" ,  "error" );
-      }
+        }
+        
+        else if(checado){
+           swal ( "Oops" ,  "Não é possível escolher um top dez e um mesmo filtro de mesmo valor" ,  "error" ); 
+        }
+  
+        else{
+            swal ( "Oops" ,  "Selecione pelo menos um tipo de execução orçamentária" ,  "error" );
+        }
     });
     
+    //Gerar o top Dez
     $(".topDezCheck").click(function() {
         //Sem o indice zero será retornado um objeto jquery e nao um HMTL DOM como é feito através de getElementById
         var selectTopDez = $("#selectTopDez")[0];
@@ -97,4 +121,6 @@ $(document).ready(function(){
             }  
         }
     });
+    
+    //Impedir de selecionar uma opção no topdez igual ao filtro
 });

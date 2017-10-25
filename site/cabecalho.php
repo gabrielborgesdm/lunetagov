@@ -39,6 +39,7 @@ if ($controle == "contato") {
         <!--Esse sweetAlert emite alert de forma graciosa -->
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="js/funcoes.js" type="text/javascript"></script>
         <script src="js/meuJquery.js" type="text/javascript"></script>
     </head>
     <body>
