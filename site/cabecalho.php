@@ -36,9 +36,15 @@ if ($controle == "contato") {
         <meta charset="UTF-8">
         <title>Luneta GOV</title>
         <link rel="stylesheet" href="css/style.css" type="text/css">
-        <!--Esse sweetAlert emite alert de forma graciosa -->
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <!--
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+        <script src="js/bootstrap.min.js"></script>
+        -->
         <script src="js/funcoes.js" type="text/javascript"></script>
         <script src="js/meuJquery.js" type="text/javascript"></script>
     </head>

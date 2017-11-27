@@ -69,7 +69,7 @@ else if ($metodo == "json") {
 
     header('Content-Disposition: attachment; filename=Dados.json');
 
-    header('Content-Type: application/json; charset=utf8');
+    header('Content-Type: application/json; charset=ISO-8859-1');
 
     echo $json;
 }
@@ -96,7 +96,7 @@ else if ($metodo == "xml") {
         $xmlWriter->endElement();
         $i++;
 
-        if (0 == $i % 1000) {
+        if ($i % 10000 == 0) {
             file_put_contents('Dados.xml', $xmlWriter->flush(true), FILE_APPEND);
         }
     }

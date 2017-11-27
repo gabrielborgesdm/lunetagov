@@ -579,27 +579,27 @@ if (isset($_POST["consultar"]) || isset($_SESSION["historico"]) || (isset($_SESS
                 $matrizTopDez[$i][1] = $linha["soma"];
                 $i++;
             }
-            
-            //monta a tabela com as barras de progresso
-            echo"<br /><br />"
-            . "<div>"
-            . "<h1 style='text-align:center'>TopDez</h1>"
-            . "<table>";
-            for($i=0;$i<count($matrizTopDez);$i++){
+            if(isset($matrizTopDez)){
+                //monta a tabela com as barras de progresso
+                echo"<br /><br />"
+                . "<div>"
+                . "<h1 style='text-align:center'>TopDez</h1>"
+                . "<table>";
+                for($i=0;$i<count($matrizTopDez);$i++){
+                        echo'
+                                <tr>
+                                        <td>'.$matrizTopDez[$i][0].'</td> '
+                                        . '<td> <progress value="'.$matrizTopDez[$i][1].'" max="'.$matrizTopDez[0][1].'"></progress></td>'
+                                        .'<td>'.number_format($matrizTopDez[$i][1], 2, ",", ".").'</td>
+                                </tr>';
+                }
+
                 echo'
-                    <tr>
-                        <td>'.$matrizTopDez[$i][0].'</td> '
-                        . '<td> <progress value="'.$matrizTopDez[$i][1].'" max="'.$matrizTopDez[0][1].'"></progress></td>'
-                        .'<td>'.number_format($matrizTopDez[$i][1], 2, ",", ".").'</td>
-                    </tr>';
+                </table>
+                </div>
+                <br /><br />
+                '; 
             }
-
-            echo'
-            </table>
-            </div>
-            <br /><br />
-            '; 
-
 
         }
     }    

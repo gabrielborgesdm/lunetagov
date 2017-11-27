@@ -1,5 +1,5 @@
 <form name="consulta" id="consulta" action="consultas.php" method="post">
-
+    
     <fieldset>
         <legend>
             Selecione uma Esfera Governamental e o item orçamentário
@@ -21,7 +21,7 @@
                 <!--ANO-->
                 <tr>
                     <td>
-                        <select name="anoExecucao">
+                        <select name="anoExecucao" class="filtroExec" >
                             <option value="0">::selecione um ano::</option>
                             <?php
                             $select = $conn->prepare("SELECT DISTINCT ano FROM `despesaestado` ORDER BY ano");
@@ -33,13 +33,14 @@
                             }
                             ?>
                         </select>
+                        
                     </td>
                 </tr>
                 
                 
                 <tr>
                     <td>
-                        <select name="funcao" class="filtroExec">
+                        <select name="funcao" class="filtroExec" style="width:80%">
                             <option value="0">::selecione uma função::</option>
                             <?php
                             $select = $conn->prepare("SELECT * FROM `funcaodespesaestado` ORDER BY nome");
@@ -51,9 +52,11 @@
                             }
                             ?>
                         </select>
+                        <img src="images/qicon.png" class="logoDuvida" alt="quest icon" height="20"
+                        title="Apresenta a execução de despesas por área e finalidade do Governo Federal"/>
                     </td>
                     <td>
-                        <select name="subfuncao" class="filtroExec">
+                        <select name="subfuncao" class="filtroExec" style="width:80%">
                             <option value="0">::selecione uma subfunção::</option>
                             <?php
                             $select = $conn->prepare("SELECT * FROM `subfuncaodespesaestado` ORDER BY nome");
@@ -65,11 +68,14 @@
                             }
                             ?>
                         </select>
+                        <img src="images/qicon.png" class="logoDuvida" alt="quest icon" height="20"
+                        title="É o nível de agregação imediatamente inferior à função e está relacionado à finalidade da ação governamental"/>
+                        
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <select name="acao" class="filtroExec">
+                        <select name="acao" style="width: 80%" class="filtroExec" style="width:80%">
                             <option value="0">::selecione uma ação::</option>
                             <?php
                             $select = $conn->prepare("SELECT * FROM `acaodespesaestado` ORDER BY nome");
@@ -81,9 +87,11 @@
                             }
                             ?>
                         </select>
+                        <img src="images/qicon.png" class="logoDuvida" alt="quest icon" height="20"
+                        title="Ação Governamental é o conjunto de operações cujos produtos contribuem para os objetivos do programa governamental, a ação pode ser um projeto, atividade ou operação especial."/>
                     </td>
                     <td>
-                        <select name="orgao" class="filtroExec">
+                        <select name="orgao" class="filtroExec" style="width:80%">
                             <option value="0">::selecione um orgão::</option>
                             <?php
                             $select = $conn->prepare("SELECT * FROM `orgaodespesaestado` ORDER BY nome");
@@ -95,11 +103,13 @@
                             }
                             ?>
                         </select>
+                        <img src="images/qicon.png" class="logoDuvida" alt="quest icon" height="20"
+                        title="Denominação dada às unidades responsáveis pelo desempenho das funções de governo"/>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <select name="categoria" class="filtroExec">
+                        <select name="categoria" class="filtroExec" style="width:80%">
                             <option value="0">::selecione uma categoria::</option>
                             <?php
                             $select = $conn->prepare("SELECT * FROM `categoriadespesaestado` ORDER BY nome");
@@ -111,9 +121,11 @@
                             }
                             ?>
                         </select>
+                        <img src="images/qicon.png" class="logoDuvida" alt="quest icon" height="20"
+                        title="Classificação da receita e despesa, com a finalidade de analisar a arrecadação e a despesa do governo"/>
                     </td>
                     <td>
-                        <select name="grupo" class="filtroExec">
+                        <select name="grupo" class="filtroExec" style="width:80%">
                             <option value="0">::selecione um grupo::</option>
                             <?php
                             $select = $conn->prepare("SELECT * FROM `grupodespesaestado` ORDER BY nome");
@@ -125,11 +137,13 @@
                             }
                             ?>
                         </select>
+                        <img src="images/qicon.png" class="logoDuvida" alt="quest icon" height="20"
+                        title="Agrupamentos em função de características comuns a determinados gastos, tais como a Unidade Orçamentária que realizou o gasto, as exigências legais para determinadas despesas etc"/>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <select name="unidadeorcamentaria" class="filtroExec">
+                        <select name="unidadeorcamentaria" class="filtroExec" style="width:80%">
                             <option value="0">::selecione uma unidade orçamentária::</option>
                             <?php
                             $select = $conn->prepare("SELECT * FROM `unidadeorcamentariadespesaestado` ORDER BY nome");
@@ -141,9 +155,11 @@
                             }
                             ?>
                         </select>
+                        <img src="images/qicon.png" class="logoDuvida" alt="quest icon" height="20"
+                        title="É o menor nível da classificação institucional."/>
                     </td>
                     <td>
-                        <select name="unidadegestora" class="filtroExec">
+                        <select name="unidadegestora" class="filtroExec"style="width:80%">
                             <option value="0">::selecione uma unidade gestora::</option>
                             <?php
                             $select = $conn->prepare("SELECT * FROM `unidadegestoradespesaestado` ORDER BY nome");
@@ -155,11 +171,13 @@
                             }
                             ?>
                         </select>
+                        <img src="images/qicon.png" class="logoDuvida" alt="quest icon" height="20"
+                        title="São unidades que gerem recursos públicos."/>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <select name="modalidade" class="filtroExec">
+                        <select name="modalidade" class="filtroExec" style="width:80%">
                             <option value="0">::selecione uma modalidade::</option>
                             <?php
                             $select = $conn->prepare("SELECT * FROM `modalidadedespesaestado` ORDER BY nome");
@@ -171,9 +189,11 @@
                             }
                             ?>
                         </select>
+                        <img src="images/qicon.png" class="logoDuvida" alt="quest icon" height="20"
+                        title="Tem por finalidade indicar se os recursos são aplicados diretamente por órgãos ou entidades no âmbito da mesma esfera do Governo ou por outro ente da Federação e suas respectivas entidades"/>
                     </td>
                     <td>
-                        <select name="elemento" class="filtroExec">
+                        <select name="elemento" class="filtroExec" style="width:80%">
                             <option value="0">::selecione um elemento::</option>
                             <?php
                             $select = $conn->prepare("SELECT * FROM `elementodespesaestado` ORDER BY nome");
@@ -185,11 +205,13 @@
                             }
                             ?>
                         </select>
+                        <img src="images/qicon.png" class="logoDuvida" alt="quest icon" height="20"
+                        title="É um recurso de codificação da despesa, de que se serve a Administração Pública para registrar e acompanhar suas atividades"/>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <select name="item" class="filtroExec">
+                        <select name="item" class="filtroExec" style="width:80%">
                             <option value="0">::selecione um item::</option>
                             <?php
                             $select = $conn->prepare("SELECT * FROM `itemdespesaestado` ORDER BY nome");
@@ -201,9 +223,11 @@
                             }
                             ?>
                         </select>
+                        <img src="images/qicon.png" class="logoDuvida" alt="quest icon" height="20"
+                        title="Desmembramento dos elementos de despesa"/>
                     </td>
                     <td>
-                        <select name="credor" class="filtroExec">
+                        <select name="credor" class="filtroExec" style="width:80%">
                             <option value="0">::selecione um credor::</option>
                             <?php
                             $select = $conn->prepare("SELECT * FROM `credordespesaestado` ORDER BY nome");
@@ -215,11 +239,13 @@
                             }
                             ?>
                         </select>
+                        <img src="images/qicon.png" class="logoDuvida" alt="quest icon" height="20"
+                        title="É toda instituição titular de um crédito, ou, que tem a receber de outrem uma certa importância em dinheiro."/>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <select name="licitacao" class="filtroExec">
+                        <select name="licitacao" class="filtroExec" style="width:80%">
                             <option value="0">::selecione uma licitação::</option>
                             <?php
                             $select = $conn->prepare("SELECT * FROM `licitacaodespesaestado` ORDER BY nome");
@@ -231,9 +257,11 @@
                             }
                             ?>
                         </select>
+                        <img src="images/qicon.png" class="logoDuvida" alt="quest icon" height="20"
+                        title="Procedimento administrativo por meio do qual a Administração Pública seleciona a proposta mais vantajosa para futura contratação que melhor atenda ao interesse público."/>
                     </td>
                     <td>
-                        <select name="fonterecursos" class="filtroExec">
+                        <select name="fonterecursos" class="filtroExec" style="width:80%">
                             <option value="0">::selecione uma fonte de recursos::</option>
                             <?php
                             $select = $conn->prepare("SELECT * FROM `fonterecursosdespesaestado` ORDER BY nome");
@@ -245,6 +273,8 @@
                             }
                             ?>
                         </select>
+                         <img src="images/qicon.png" class="logoDuvida" alt="quest icon" height="20"
+                        title="Identifica as origens dos ingressos de recursos, que financiam os gastos públicos, detalhando quais são as receitas que custeiam determinadas despesas."/>
                     </td>
                 </tr>
             </tbody></table>
@@ -253,6 +283,7 @@
 
     <fieldset id="camposDefinidores">
         <legend>Mostrar os seguintes campos definidores da despesa no resultado da pesquisa</legend>
+        <br />
         <label><input type="checkbox" name="listarFuncao" class="topDezCheck"> Função</label>
         <label><input type="checkbox" name="listarSubFuncao" class="topDezCheck">SubFunção</label>
         <label><input type="checkbox" name="listarAcao" class="topDezCheck">Ação</label>  
@@ -346,7 +377,11 @@
         <?php
     }
     ?>
-
+    <p>
+        <a href="http://transparencia.al.gov.br/portal/glossario/">Glossário<img src="images/qicon.png" class="logoDuvida" alt="quest icon" height="20"
+             title="glossário do Portal da Transparência, onde estão explicados os nomes, descrições e títulos utilizados no Luneta"/>
+        </a>
+    </p>
     <div class="message" >
         <br />
         <input type="hidden" name="consultar" value="1">

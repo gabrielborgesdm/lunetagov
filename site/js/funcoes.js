@@ -65,3 +65,66 @@ function verificaFiltro(nome){
     }
     return equivalente;
 }
+
+function nomeTopDez(nome){
+    var opt;
+    switch(nome){
+        case "listarFuncao":
+            opt = 'Função';
+            break;
+
+        case 'listarSubFuncao':
+            opt = 'SubFunção';
+            break;
+
+        case 'listarAcao':
+            opt = 'Ação';
+            break;
+
+        case 'listarOrgao':
+            opt = 'Orgão';
+            break;
+
+        case 'listarCategoria':
+            opt = 'Categoria';
+            break;
+
+        case 'listarGrupo':
+            opt = 'Grupo';
+            break;
+
+        case 'listarUnidadeOrcamentaria':
+            opt = 'Unidade Orçamentária';
+            break;
+
+        case 'listarUnidadeGestora':
+            opt = 'Unidade Gestora';
+            break;
+
+        case 'listarModalidade':
+            opt = 'Modalidade';
+            break;
+
+        case 'listarElemento':
+            opt = 'Elemento';
+            break;
+
+        case 'listarItem':
+            opt = 'Item';
+            break;
+
+        case 'listarCredor':
+            opt = 'Credor';
+            break;
+
+        case 'listarLicitacao':
+            opt = 'Licitação';
+            break;
+
+        case 'listarFonteRecursos':
+            opt = 'Fonte de Recursos';
+            break;
+
+    }
+    return opt;
+}

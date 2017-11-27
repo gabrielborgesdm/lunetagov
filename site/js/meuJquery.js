@@ -5,11 +5,11 @@ $(document).ready(function(){
         var checado = 0;
         var filtro = 1;
         
-        
+        //For each jquery
         $.each($(".filtroExec") , function (index, value){
             if(this.value != 0){
                 var equivalente = verificaFiltro(this.name);
-           
+                                    //o zero na frente é pra transformar o objeto jquery em um DOM, que nem no js vanilla
                 if(equivalente == $("#selectTopDez")[0].value){
                    filtro = 0; 
                 }
@@ -25,7 +25,7 @@ $(document).ready(function(){
         }
         
         else if(checado){
-           swal ( "Oops" ,  "Não é possível escolher um top dez e um mesmo filtro de mesmo valor" ,  "error" ); 
+           swal ( "Oops" ,  "Não é possível escolher um top dez e um filtro de mesmo valor" ,  "error" ); 
         }
   
         else{
@@ -42,65 +42,8 @@ $(document).ready(function(){
             $("#fieldTopDez").css("display", "initial"); 
             var opt = document.createElement("option");
             
-            switch(this.name){
-                case "listarFuncao":
-                    
-                    opt.innerHTML = 'Função';
-                    break;
-
-                case 'listarSubFuncao':
-                    opt.innerHTML = 'SubFunção';
-                    break;
-
-                case 'listarAcao':
-                    opt.innerHTML = 'Ação';
-                    break;
-
-                case 'listarOrgao':
-                    opt.innerHTML = 'Orgão';
-                    break;
-
-                case 'listarCategoria':
-                    opt.innerHTML = 'Categoria';
-                    break;
-
-                case 'listarGrupo':
-                    opt.innerHTML = 'Grupo';
-                    break;
-
-                case 'listarUnidadeOrcamentaria':
-                    opt.innerHTML = 'Unidade Orçamentária';
-                    break;
-
-                case 'listarUnidadeGestora':
-                    opt.innerHTML = 'Unidade Gestora';
-                    break;
-
-                case 'listarModalidade':
-                    opt.innerHTML = 'Modalidade';
-                    break;
-
-                case 'listarElemento':
-                    opt.innerHTML = 'Elemento';
-                    break;
-
-                case 'listarItem':
-                    opt.innerHTML = 'Item';
-                    break;
-
-                case 'listarCredor':
-                    opt.innerHTML = 'Credor';
-                    break;
-
-                case 'listarLicitacao':
-                    opt.innerHTML = 'Licitação';
-                    break;
-
-                case 'listarFonteRecursos':
-                    opt.innerHTML = 'Fonte de Recursos';
-                    break;
-                
-            }
+            opt.innerHTML = nomeTopDez(this.name);
+            
             opt.value = this.name;
             $("#selectTopDez").append(opt);
             
@@ -121,6 +64,5 @@ $(document).ready(function(){
             }  
         }
     });
-    
-    //Impedir de selecionar uma opção no topdez igual ao filtro
+   
 });
