@@ -1,3 +1,4 @@
+
 <?php
 /*
   Verifica se  a consulta poderá ser exibida. Situações:
@@ -6,7 +7,7 @@
  */
 
 if (isset($_POST["consultar"]) || isset($_SESSION["historico"]) || (isset($_SESSION["consulta"]) && (isset($_GET["pg"])))) {
-
+    
 
     if (isset($_POST["consultar"]) && isset($_SESSION["consulta"])) {
         unset($_SESSION["historico"]);
@@ -72,25 +73,22 @@ if (isset($_POST["consultar"]) || isset($_SESSION["historico"]) || (isset($_SESS
 
     $pg = $pg * 10;
 
-    echo'<br />';
-    ?>
-
-    Total: R$
-
-    <?php
+     
     if (!isset($_SESSION["totalPago"])) {
         $_SESSION["totalPago"] = number_format($l["totalPago"], 2, ",", ".");
     }
 
-    echo $_SESSION["totalPago"];
+    echo'
+    <p class="text-info">
+        <h4>Total envolvido de R$ '.$_SESSION["totalPago"].'</h4>    
+    </p>';
 
 // Inicializa cabecalhos de informação da tabela
     $titulos = ' 
-		<br />
-		
-		<table align="left" class="table" border="1" style="border-color:#000000">
-		<tr style="background-color:#FABC0A;color:#FFFFFF;">
-			<td>Ano</td>';
+	<div class="table-responsive col-xs-12" style="padding:0">
+            <table class="table table-bordered table-striped">
+                <tr class="text-info">
+                    <th>Ano</th>';
 
 //inicializa variavel de consulta baseada nos filtros
 
@@ -106,8 +104,8 @@ if (isset($_POST["consultar"]) || isset($_SESSION["historico"]) || (isset($_SESS
         $_SESSION["listarFuncao"] = 1;
         //concatena na variavel $titulo as colunas Cod Função e Função.
         $titulos .= '
-            <td>Cod Função</td>
-            <td>Função</td>';
+            <th>Cod Função</th>
+            <th>Função</th>';
         //concatena na variavel $select os itens a serem selecionados na consulta		
         $select .= ", de.idFuncao as idFuncao, fde.nome AS nomeFuncao";
         //concatena na variavel $joinSelect as juncoes de tabela despesaestado e funcaodespesaestado
@@ -124,8 +122,8 @@ if (isset($_POST["consultar"]) || isset($_SESSION["historico"]) || (isset($_SESS
         $_SESSION["listarSubFuncao"] = 1;
         //concatena na variavel $titulo as colunas Cod SubFunção e SubFunção.
         $titulos .= '
-				<td>Cod SubFunção</td>
-				<td>Subfunção</td>';
+            <th>Cod SubFunção</th>
+            <th>Subfunção</th>';
         //concatena na variavel $select os itens a serem selecionados na consulta		
         $select .= ",de.idSubFuncao as idSubFuncao, sfde.nome AS nomeSubFuncao";
         //concatena na variavel $joinSelect as juncoes de tabela despesaestado e subfuncaodespesaestado
@@ -142,8 +140,8 @@ if (isset($_POST["consultar"]) || isset($_SESSION["historico"]) || (isset($_SESS
         $_SESSION["listarOrgao"] = 1;
         //concatena na variavel $titulo as colunas Cod Orgão e Orgão.
         $titulos .= '
-				<td>Cod Orgão</td>
-				<td>Orgão</td>';
+            <th>Cod Orgão</th>
+            <th>Orgão</th>';
         //concatena na variavel $select os itens a serem selecionados na consulta
         $select .= ",de.idOrgao as idOrgao, ode.nome AS nomeOrgao";
         //concatena na variavel $joinSelect as juncoes de tabela despesaestado e orgaodespesaestado
@@ -160,8 +158,8 @@ if (isset($_POST["consultar"]) || isset($_SESSION["historico"]) || (isset($_SESS
         $_SESSION["listarCategoria"] = 1;
         //concatena na variavel $titulo as colunas Cod Categoria e Categoria.
         $titulos .= '
-				<td>Cod Categoria</td>
-				<td>Categoria</td>';
+            <th>Cod Categoria</th>
+            <th>Categoria</th>';
         //concatena na variavel $select os itens a serem selecionados na consulta
         $select .= ",de.idCategoria as idCategoria, cde.nome AS nomeCategoria";
         //concatena na variavel $joinSelect as juncoes de tabela despesaestado e categoriadespesaestado
@@ -178,8 +176,8 @@ if (isset($_POST["consultar"]) || isset($_SESSION["historico"]) || (isset($_SESS
         $_SESSION["listarGrupo"] = 1;
         //concatena na variavel $titulo as colunas Cod Grupo e Grupo.
         $titulos .= '
-				<td>Cod Grupo</td>
-				<td>Grupo</td>';
+            <th>Cod Grupo</th>
+            <th>Grupo</th>';
         //concatena na variavel $select os itens a serem selecionados na consulta
         $select .= ",de.idGrupo as idGrupo, gde.nome AS nomeGrupo";
         //concatena na variavel $joinSelect as juncoes de tabela despesaestado e grupodespesaestado
@@ -196,8 +194,8 @@ if (isset($_POST["consultar"]) || isset($_SESSION["historico"]) || (isset($_SESS
         $_SESSION["listarUnidadeOrcamentaria"] = 1;
         //concatena na variavel $titulo as colunas Cod unidade Orcamentaria e Unidade Orcamentaria.
         $titulos .= '
-				<td>Cod Unidade Orçamentária</td>
-				<td>Unidade Orçãmentária</td>';
+            <th>Cod Unidade Orçamentária</th>
+            <th>Unidade Orçãmentária</th>';
         //concatena na variavel $select os itens a serem selecionados na consulta
         $select .= ",de.idUnidadeOrcamentaria as idUnidadeOrcamentaria, uode.nome AS nomeUnidadeOrcamentaria";
         //concatena na variavel $joinSelect as juncoes de tabela despesaestado e unidadeorcamentariadespesaestado
@@ -214,8 +212,8 @@ if (isset($_POST["consultar"]) || isset($_SESSION["historico"]) || (isset($_SESS
         $_SESSION["listarUnidadeGestora"] = 1;
         //concatena na variavel $titulo as colunas Cod Unidade Gestora e Unidade Gestora.
         $titulos .= '
-				<td>Cod Unidade Gestora</td>
-				<td>Unidade Gestora</td>';
+            <th>Cod Unidade Gestora</th>
+            <th>Unidade Gestora</th>';
         //concatena na variavel $select os itens a serem selecionados na consulta
         $select .= ",de.idUnidadeGestora as idUnidadeGestora, ugde.nome AS nomeUnidadeGestora";
         //concatena na variavel $joinSelect as juncoes de tabela despesaestado e unidadeGestora
@@ -232,8 +230,8 @@ if (isset($_POST["consultar"]) || isset($_SESSION["historico"]) || (isset($_SESS
         $_SESSION["listarModalidade"] = 1;
         //concatena na variavel $titulo as colunas Cod Modalidade e Modalidade.
         $titulos .= '
-				<td>Cod Modalidade</td>
-				<td>Modalidade</td>';
+            <th>Cod Modalidade</th>
+            <th>Modalidade</th>';
         //concatena na variavel $select os itens a serem selecionados na consulta
         $select .= ",de.idModalidade as idModalidade, mde.nome AS nomeModalidade";
         //concatena na variavel $joinSelect as juncoes de tabela despesaestado e modalidadedespesaestado
@@ -250,8 +248,8 @@ if (isset($_POST["consultar"]) || isset($_SESSION["historico"]) || (isset($_SESS
         $_SESSION["listarElemento"] = 1;
         //concatena na variavel $titulo as colunas Cod Elemento e Elemento.
         $titulos .= '
-				<td>Cod Elemento</td>
-				<td>Elemento</td>';
+            <th>Cod Elemento</th>
+            <th>Elemento</th>';
         //concatena na variavel $select os itens a serem selecionados na consulta
         $select .= ",de.idElemento as idElemento, ede.nome AS nomeElemento";
         //concatena na variavel $joinSelect as juncoes de tabela despesaestado e elementodespesaestado
@@ -268,8 +266,8 @@ if (isset($_POST["consultar"]) || isset($_SESSION["historico"]) || (isset($_SESS
         $_SESSION["listarItem"] = 1;
         //concatena na variavel $titulo as colunas Cod Item e Item.
         $titulos .= '
-				<td>Cod Item</td>
-				<td>Item</td>';
+            <th>Cod Item</th>
+            <th>Item</th>';
         //concatena na variavel $select os itens a serem selecionados na consulta
         $select .= ",de.idItem as idItem, ide.nome AS nomeItem";
         //concatena na variavel $joinSelect as juncoes de tabela despesaestado e itemdespesaestado
@@ -286,8 +284,8 @@ if (isset($_POST["consultar"]) || isset($_SESSION["historico"]) || (isset($_SESS
         $_SESSION["listarCredor"] = 1;
         //concatena na variavel $titulo as colunas Cod Credor e Credor.
         $titulos .= '
-				<td>Cod Credor</td>
-				<td>Credor</td>';
+            <th>Cod Credor</th>
+            <th>Credor</th>';
         //concatena na variavel $select os itens a serem selecionados na consulta
         $select .= ",de.idCredor as idCredor, crde.nome AS nomeCredor";
         //concatena na variavel $joinSelect as juncoes de tabela despesaestado e credordespesaestado
@@ -304,8 +302,8 @@ if (isset($_POST["consultar"]) || isset($_SESSION["historico"]) || (isset($_SESS
         $_SESSION["listarLicitacao"] = 1;
         //concatena na variavel $titulo as colunas Cod Credor e Credor.
         $titulos .= '
-				<td>Cod Licitação</td>
-				<td>Licitação</td>';
+            <th>Cod Licitação</th>
+            <th>Licitação</th>';
         //concatena na variavel $select os itens a serem selecionados na consulta
         $select .= ",de.idLicitacao as idLicitacao, lde.nome AS nomeLicitacao";
         //concatena na variavel $joinSelect as juncoes de tabela despesaestado e licitacaodespesaestado
@@ -322,8 +320,8 @@ if (isset($_POST["consultar"]) || isset($_SESSION["historico"]) || (isset($_SESS
         $_SESSION["listarFonteRecursos"] = 1;
         //concatena na variavel $titulo as colunas Cod Fonte de Recursos e Fonte de Recursos.
         $titulos .= '
-				<td>Cod Fontre de Recursos</td>
-				<td>Fonte de Recursos</td>';
+            <th>Cod Fontre de Recursos</th>
+            <th>Fonte de Recursos</th>';
         //concatena na variavel $select os itens a serem selecionados na consulta
         $select .= ",de.idFonteRecurso as idFonteRecurso, frde.nome AS nomeFonteRecurso";
         //concatena na variavel $joinSelect as juncoes de tabela despesaestado e fonterecursosdespesaestado
@@ -340,8 +338,8 @@ if (isset($_POST["consultar"]) || isset($_SESSION["historico"]) || (isset($_SESS
         $_SESSION["listarAcao"] = 1;
         //concatena na variavel $titulo as colunas Cod Acao e Acao.
         $titulos .= '
-				<td>Cod Ação</td>
-				<td>Ação</td>';
+            <th>Cod Ação</th>
+            <th>Ação</th>';
         //concatena na variavel $select os itens a serem selecionados na consulta
         $select .= ",de.idAcao as idAcao, ade.nome AS nomeAcao";
         //concatena na variavel $joinSelect as juncoes de tabela despesaestado e acaodespesaestado
@@ -357,7 +355,7 @@ if (isset($_POST["consultar"]) || isset($_SESSION["historico"]) || (isset($_SESS
         //cria-se a sessão listarValorPago para que durante a navegação em páginas esta continue a entrar nos filtros.
         $_SESSION["listarValorPago"] = 1;
         //concatena na variavel $titulo a coluna Valor Pago.
-        $titulos .= '<td>Valor Pago</td>';
+        $titulos .= '<th>Valor Pago</th>';
         //concatena na variavel $select os itens a serem selecionados na consulta
         $select .= ",valorPago";
     }
@@ -367,7 +365,7 @@ if (isset($_POST["consultar"]) || isset($_SESSION["historico"]) || (isset($_SESS
         //cria-se a sessão listarValorEmpenhado para que durante a navegação em páginas esta continue a entrar nos filtros.
         $_SESSION["listarValorEmpenhado"] = 1;
         //concatena na variavel $titulo a coluna Valor Empenhado.
-        $titulos .= '<td>Valor Empenhado</td>';
+        $titulos .= '<th>Valor Empenhado</th>';
         //concatena na variavel $select os itens a serem selecionados na consulta
         $select .= ",valorEmpenhado";
     }
@@ -377,7 +375,7 @@ if (isset($_POST["consultar"]) || isset($_SESSION["historico"]) || (isset($_SESS
         //cria-se a sessão listarValorLiquido para que durante a navegação em páginas esta continue a entrar nos filtros.
         $_SESSION["listarValorLiquido"] = 1;
         //concatena na variavel $titulo a coluna Valor Liquido.
-        $titulos .= '<td>Valor Liquido</td>';
+        $titulos .= '<th>Valor Liquido</th>';
         //concatena na variavel $select os itens a serem selecionados na consulta
         $select .= ",valorLiquido";
     }
@@ -387,7 +385,7 @@ if (isset($_POST["consultar"]) || isset($_SESSION["historico"]) || (isset($_SESS
         //cria-se a sessão listarValorDeAnosAnteriores para que durante a navegação em páginas esta continue a entrar nos filtros.
         $_SESSION["listarValorDeAnosAnteriores"] = 1;
         //concatena na variavel $titulo a coluna Valor de Anos Anteriores.
-        $titulos .= '<td>Valor de Anos Anteriores</td>';
+        $titulos .= '<th>Valor de Anos Anteriores</th>';
         //concatena na variavel $select os itens a serem selecionados na consulta
         $select .= ",valorDeAnosAnteriores";
     }
@@ -478,9 +476,9 @@ if (isset($_POST["consultar"]) || isset($_SESSION["historico"]) || (isset($_SESS
         $insercaoHistorico->execute($vetorInsercao) or die("Erro ao inserir historico");
     }
     
+    //Variavel usada para o download dos dados
     $selecionaDados = $select;
-    //Inclui o form que disponibiliza arquivos csv,xml,etc
-    include("fazerDownload.php");
+    
     
     //Se for a primeira pagina a variavel torna 1
     if(isset($_GET["pg"])){
@@ -581,24 +579,34 @@ if (isset($_POST["consultar"]) || isset($_SESSION["historico"]) || (isset($_SESS
             }
             if(isset($matrizTopDez)){
                 //monta a tabela com as barras de progresso
-                echo"<br /><br />"
-                . "<div>"
-                . "<h1 style='text-align:center'>TopDez</h1>"
-                . "<table>";
+                echo'
+                    <div class="col-xs-12 text-center">
+                        <h1 class="text-info page-header">Top10</h1>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped">
+                                <thead>
+                                    <tr class="text-info">
+                                        <th>Itens do campo definidor</th>
+                                        <th>Barra de proporção</th>
+                                        <th>Quantidade envolvida</th>
+                                    </tr>
+                                </thead>    
+                    ';
+
                 for($i=0;$i<count($matrizTopDez);$i++){
                         echo'
-                                <tr>
-                                        <td>'.$matrizTopDez[$i][0].'</td> '
-                                        . '<td> <progress value="'.$matrizTopDez[$i][1].'" max="'.$matrizTopDez[0][1].'"></progress></td>'
-                                        .'<td>'.number_format($matrizTopDez[$i][1], 2, ",", ".").'</td>
-                                </tr>';
+                            <tr>
+                                <td>'.$matrizTopDez[$i][0].'</td> '
+                                . '<td> <progress value="'.$matrizTopDez[$i][1].'" max="'.$matrizTopDez[0][1].'"></progress></td>'
+                                .'<td class="text-info">'.number_format($matrizTopDez[$i][1], 2, ",", ".").'</td>
+                            </tr>
+                        ';
                 }
 
-                echo'
-                </table>
-                </div>
-                <br /><br />
-                '; 
+                    echo'
+                        </table>          
+                    </div>    
+                    '; 
             }
 
         }
@@ -606,152 +614,136 @@ if (isset($_POST["consultar"]) || isset($_SESSION["historico"]) || (isset($_SESS
 	
     
     //finaliza a consulta com a paginação
-    
     $select .= " LIMIT $pg, 10";
 
     //executa a consulta-
-	
-	
     $consulta = $conn->prepare($select);
     $consulta->execute();
-	
-	/*Fazer esse metodo acima e mostrar a tabela top 10 antes da tabela normal*/
-
-    echo $titulos;
+    echo'<h1 class="text-info page-header">Consulta</h1>' . $titulos;
 
     $cor[0] = "#F0F0F0";
     $cor[1] = "FFFFFF";
     $i = 0;
     while ($linha = $consulta->fetch()) {
 
-        echo "<tr style='background-color:" . $cor[$i % 2] . "'>
-				<td>" . $linha["ano"] . "</td>";
+        echo 
+            "<tr>
+                <td>" . $linha["ano"] . "</td>";
 
         if (isset($_SESSION['listarFuncao'])) {
             echo '
-				<td>' . $linha["idFuncao"] . '</td>
-				<td>' . $linha['nomeFuncao'] . '</td>';
+                <td>' . $linha["idFuncao"] . '</td>
+                <td>' . $linha['nomeFuncao'] . '</td>';
         }
         if (isset($_SESSION['listarSubFuncao'])) {
             echo '
-				<td>' . $linha["idSubFuncao"] . '</td>
-				<td>' . $linha['nomeSubFuncao'] . '</td>';
+                <td>' . $linha["idSubFuncao"] . '</td>
+                <td>' . $linha['nomeSubFuncao'] . '</td>';
         }
         if (isset($_SESSION['listarAcao'])) {
             echo '
-				<td>' . $linha["idAcao"] . '</td>
-				<td>' . $linha['nomeAcao'] . '</td>';
+                <td>' . $linha["idAcao"] . '</td>
+                <td>' . $linha['nomeAcao'] . '</td>';
         }
         if (isset($_SESSION['listarOrgao'])) {
             echo '
-				<td>' . $linha["idOrgao"] . '</td>
-				<td>' . $linha['nomeOrgao'] . '</td>';
+                <td>' . $linha["idOrgao"] . '</td>
+                <td>' . $linha['nomeOrgao'] . '</td>';
         }
         if (isset($_SESSION['listarCategoria'])) {
             echo '
-				<td>' . $linha["idCategoria"] . '</td>
-				<td>' . $linha['nomeCategoria'] . '</td>';
+                <td>' . $linha["idCategoria"] . '</td>
+                <td>' . $linha['nomeCategoria'] . '</td>';
         }
         if (isset($_SESSION['listarGrupo'])) {
             echo '
-				<td>' . $linha["idGrupo"] . '</td>
-				<td>' . $linha['nomeGrupo'] . '</td>';
+                <td>' . $linha["idGrupo"] . '</td>
+                <td>' . $linha['nomeGrupo'] . '</td>';
         }
         if (isset($_SESSION['listarUnidadeGestora'])) {
             echo '
-				<td>' . $linha["idUnidadeGestora"] . '</td>
-				<td>' . $linha['nomeUnidadeGestora'] . '</td>';
+                <td>' . $linha["idUnidadeGestora"] . '</td>
+                <td>' . $linha['nomeUnidadeGestora'] . '</td>';
         }
         if (isset($_SESSION['listarUnidadeOrcamentaria'])) {
             echo '
-				<td>' . $linha["idUnidadeOrcamentaria"] . '</td>
-				<td>' . $linha['nomeUnidadeOrcamentaria'] . '</td>';
+                <td>' . $linha["idUnidadeOrcamentaria"] . '</td>
+                <td>' . $linha['nomeUnidadeOrcamentaria'] . '</td>';
         }
         if (isset($_SESSION['listarModalidade'])) {
             echo '
-				<td>' . $linha["idModalidade"] . '</td>
-				<td>' . $linha['nomeModalidade'] . '</td>';
+                <td>' . $linha["idModalidade"] . '</td>
+                <td>' . $linha['nomeModalidade'] . '</td>';
         }
         if (isset($_SESSION['listarElemento'])) {
             echo '
-				<td>' . $linha["idElemento"] . '</td>
-				<td>' . $linha['nomeElemento'] . '</td>';
+                <td>' . $linha["idElemento"] . '</td>
+                <td>' . $linha['nomeElemento'] . '</td>';
         }
         if (isset($_SESSION['listarItem'])) {
             echo '
-				<td>' . $linha["idItem"] . '</td>
-				<td>' . $linha['nomeItem'] . '</td>';
+                <td>' . $linha["idItem"] . '</td>
+                <td>' . $linha['nomeItem'] . '</td>';
         }
         if (isset($_SESSION['listarCredor'])) {
             echo '
-				<td>' . $linha["idCredor"] . '</td>
-				<td>' . $linha['nomeCredor'] . '</td>';
+                <td>' . $linha["idCredor"] . '</td>
+                <td>' . $linha['nomeCredor'] . '</td>';
         }
         if (isset($_SESSION['listarLicitacao'])) {
             echo '
-				<td>' . $linha["idLicitacao"] . '</td>
-				<td>' . $linha['nomeLicitacao'] . '</td>';
+                <td>' . $linha["idLicitacao"] . '</td>
+                <td>' . $linha['nomeLicitacao'] . '</td>';
         }
         if (isset($_SESSION['listarFonteRecursos'])) {
             echo '
-				<td>' . $linha["idFonteRecurso"] . '</td>
-				<td>' . $linha['nomeFonteRecurso'] . '</td>';
+                <td>' . $linha["idFonteRecurso"] . '</td>
+                <td>' . $linha['nomeFonteRecurso'] . '</td>';
         }
         if (isset($_SESSION['listarValorPago'])) {
             echo '
-				<td>' . number_format($linha["valorPago"], 2, ",", ".") . '</td>';
+                <td>' . number_format($linha["valorPago"], 2, ",", ".") . '</td>';
         }
         if (isset($_SESSION['listarValorEmpenhado'])) {
             echo '
-				<td>' . number_format($linha["valorEmpenhado"], 2, ",", ".") . '</td>';
+                <td>' . number_format($linha["valorEmpenhado"], 2, ",", ".") . '</td>';
         }
         if (isset($_SESSION['listarValorLiquido'])) {
             echo '
-				<td>' . number_format($linha["valorLiquido"], 2, ",", ".") . '</td>';
+                <td>' . number_format($linha["valorLiquido"], 2, ",", ".") . '</td>';
         }
         if (isset($_SESSION['listarDeAnosAnteriores'])) {
             echo '
-				<td>' . number_format($linha["valorDeAnosAnteriores"], 2, ",", ".") . '</td>';
+                <td>' . number_format($linha["valorDeAnosAnteriores"], 2, ",", ".") . '</td>';
         }
-
-
 
         echo "</tr>";
         $i++;
     }
 
     echo'
-	</table>';
+            </table>
+        </div>
+        ';
 
+    //Inclui o form que disponibiliza arquivos csv,xml,etc
+    include("fazerDownload.php");
 
     $qtdPagina = $qtdElementos / 10;
-    ?>
-    <br /><br /><br /><br /><br />
-    <br /><br /><br /><br /><br />
-    <center>
-        Você está na página <?= ((int) $pg / 10 + 1); ?>. Existem <?= round($qtdPagina); ?> páginas para esta consulta. Digite abaixo a página desejada. <br />
-        <fieldset class="message">
-            <form name="pagina" method="Get" action="consultas.php" >
-                <input type="text" name="pg" /> <input type="submit" value="ir" />
-            </form>
-        </fieldset>
-    </center>
-    <div id="fb-root"></div>
-    <script>(function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id))
-                return;
-            js = d.createElement(s);
-            js.id = id;
-            js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
-
-    <!-- Your share button code -->
-    <div class="fb-share-button" 
-         data-href="http://www.your-domain.com/your-page.html" 
-         data-layout="button_count">
+   
+    echo'    
+    <div class="col-xs-12" style="margin-bottom:20px;">
+        <p class="text-info">Você está na página '. ((int) $pg / 10 + 1) . ' Existem ' . round($qtdPagina) . ' páginas para esta consulta. Digite abaixo a página desejada</p>   
+        
+        <form name="pagina" method="Get" class="form-inline" action="consultas.php">
+            <div class="form-group">                
+                <input class="form-control" type="number" name="pg" />               
+            </div>           
+            <button type="submit" class="btn btn-default">Ir</button>           
+        </form>
     </div>
-    <?php
+    ';
+
+   
 }
 ?>

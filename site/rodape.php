@@ -1,13 +1,20 @@
-<div id="footer">
-    <div class="clearfix">
-        <div id="connect">
-            <a href="http://freewebsitetemplates.com/go/facebook/" target="_blank" class="facebook"></a><a href="http://freewebsitetemplates.com/go/googleplus/" target="_blank" class="googleplus"></a><a href="http://freewebsitetemplates.com/go/twitter/" target="_blank" class="twitter"></a><a href="http://www.freewebsitetemplates.com/misc/contact/" target="_blank" class="tumbler"></a>
+		
+        <div class=" row rodape fixed-bottom" style="padding:0;">
+            <footer class="col-xs-12">
+                <div class="text-center" style="padding:10px 0 10px 0 ;">
+                    <span class="text-muted">&copy; 2016. All Rights Reserved.</span>
+                </div>
+            </footer>
         </div>
-        <p>
-            © 2016. All Rights Reserved.
-        </p>
-    </div>
-</div>
-</div>
+    </section>
 </body>
+<!--Jquery and Bootstrap-->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+<!--Sweet Alert-->
+<script src="js/sweetalert.min.js"></script>
+
+<script src="js/funcoes.js" type="text/javascript"></script>
+<script src="js/meuJquery.js" type="text/javascript"></script>
 </html>

@@ -1,5 +1,7 @@
 ﻿<?php
 include("conexao.php");
+
+$conn = conexaoDB();
 $seleciona = $_POST["seleciona"];
 $metodo = $_POST["download"];
 
@@ -13,19 +15,17 @@ if ($metodo == "csv") {
     $i = 0;
 
     //Recuperar Cabecalho
-    while ($linha = $consulta->fetch()) {
+    while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
         if ($i == 0) {
             $cont = 0;
             $cabecalho = array();
 
-            foreach ($linha as $j => $v) {
-                if (!is_numeric($j)) {
-                    $cabecalho[$cont] = $j;
-                    $cont++;
-                }
+            foreach ($linha as $j => $v) {               
+                $cabecalho[$cont] = $j;
+                $cont++;               
             }
 
-            fputcsv($fp, $cabecalho, ",");
+            fputcsv($fp, $cabecalho, ";");
         }
         $conteudo = array();
         $cont = 0;
@@ -35,7 +35,7 @@ if ($metodo == "csv") {
             }
             $cont++;
         }
-        fputcsv($fp, $conteudo, ",");
+        fputcsv($fp, $conteudo, ";");
         $i++;
     }
 
@@ -51,27 +51,26 @@ if ($metodo == "csv") {
 else if ($metodo == "json") {
 
     $json = array();
-
-    while ($linha = $consulta->fetch()) {
-
-        foreach ($linha as $j => $v) {
-
-            if (is_numeric($j)) {
-
-                unset($linha[$j]);
-            }
-        }
+    $i = 0;
+    header('Content-Disposition: attachment; filename=Dados.json');
+    header('Content-Type: application/json; charset=ISO-8859-1');
+    
+    while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
 
         array_push($json, $linha);
+        
+        if ($i % 1000 == 0) {
+            
+            $json = json_encode($json);
+           
+            echo $json;
+            
+            unset($json);
+            $json = array();    
+        }
     }
 
-    $json = json_encode($json);
-
-    header('Content-Disposition: attachment; filename=Dados.json');
-
-    header('Content-Type: application/json; charset=ISO-8859-1');
-
-    echo $json;
+   
 }
 
 #------------------------------------------------XML
@@ -86,12 +85,12 @@ else if ($metodo == "xml") {
     $xmlWriter->startElement('objetos');
 
     $i = 0;
-    while ($linha = $consulta->fetch()) {
+    while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
         $xmlWriter->startElement('objeto');
         foreach ($linha as $j => $v) {
-            if (!is_numeric($j)) {
-                $xmlWriter->writeElement($j, $v);
-            }
+           
+            $xmlWriter->writeElement($j, $v);
+           
         }
         $xmlWriter->endElement();
         $i++;
