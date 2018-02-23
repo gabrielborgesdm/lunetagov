@@ -14,6 +14,6 @@
 - Eu desativei o sistema de colsultas por histórico pois o mesmo não funciona, caso queira ativar basta mudar: 
 	- site/cabecalho.php linha 65
 	- site/formConsulta.php linha 422
-
+- Arrumei o estouro de memória que estava acontecendo no downloadExibeConsulta.php e implementei o PDO::FETCH_ASSOC no método fetch(), assim retornando apenas o array associativo.
 - Coloquei a conexao em PDO dentro de uma função, assim não necessário mudar os dados do banco várias vezes.
 - Não esqueça de colocar o email e senha que enviará as mensagens no arquivo site/contato.php linha 66
