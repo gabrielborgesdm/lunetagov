@@ -12,8 +12,8 @@
  
 ## Importante: 
 - Eu desativei o sistema de colsultas por histórico pois o mesmo não funciona, caso queira ativar basta mudar: 
-	-- site/cabecalho.php linha 65
-	-- site/formConsulta.php linha 422
+	- site/cabecalho.php linha 65
+	- site/formConsulta.php linha 422
 
 - Coloquei a conexao em PDO dentro de uma função, assim não necessário mudar os dados do banco várias vezes.
 - Não esqueça de colocar o email e senha que enviará as mensagens no arquivo site/contato.php linha 66
