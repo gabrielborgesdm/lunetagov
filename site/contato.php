@@ -63,8 +63,8 @@
 
                     //Dados de email
 
-                    $Mailer->Username = 'lunetagovbr@gmail.com';
-                    $Mailer->Password = 'Luneta@govBr';
+                    $Mailer->Username = 'seuemail@gmail.com';
+                    $Mailer->Password = 'senha@senha1234';
 
                     //Email do Remetente
                     $Mailer->From = $email;
