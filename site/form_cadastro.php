@@ -37,7 +37,7 @@ include("cabecalho.php");
                             <input type="text" name="cidade" required="required" class="form-control text-center" id="cidade" placeholder="Insira o nome de sua cidade" />
                         </div>
 
-                        <button type="button" id="btnCadastro" class="btn btn-default col-xs-12">Cadastrar</button>
+                        <button type="submit" id="btnCadastro" class="btn btn-default col-xs-12">Cadastrar</button>
                     </fieldset>
                 </form>
                 ';
