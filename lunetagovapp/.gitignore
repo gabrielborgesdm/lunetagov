@@ -4,6 +4,8 @@
 
 # Xcode
 #
+android/app/lunetagovapp.keystore
+android/app/build/outputs/bundle
 build/
 *.pbxuser
 !default.pbxuser
