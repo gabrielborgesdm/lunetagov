@@ -8,10 +8,13 @@
 ## Instalação:
 - Extraia o diretorio luneta para seu servidor
 - Mude os dados do banco no arquivo site/conexao.php.
-- Importe o banco de dados através do arquivo ddpbr_luneta.sql disponível no diretório LunetaGov
+- Importe o banco de dados através do arquivo ddpbr_luneta.sql disponível no diretório LunetaGov 
+    - Para fazer a importação utilize crie um banco de dados
+    - Abra o shell do mysql
+    - digite o seguinte comando `mysql -u [username_do_db] -p [nome_do_banco_criado] < ddpbr_lunetagov.sql`
  
 ## Importante: 
-- Eu desativei o sistema de colsultas por histórico pois o mesmo não funciona, caso queira ativar basta mudar: 
+- Eu desativei o sistema de colsultas por histórico pois ele não funciona, caso queira ativar basta mudar: 
 	- site/cabecalho.php linha 65
 	- site/formConsulta.php linha 422
 - Arrumei o estouro de memória que estava acontecendo no downloadExibeConsulta.php e implementei o PDO::FETCH_ASSOC no método fetch(), assim retornando apenas o array associativo.
