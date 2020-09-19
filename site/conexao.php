@@ -1,6 +1,6 @@
 <?php
 function conexaoDB(){
-   $conn = new PDO("mysql:host=localhost;dbname=ddpbr_lunetagov", "root", "");
+   $conn = new PDO("mysql:host=localhost;dbname=lunetagov", "root", "");
    return $conn;
 }
 
